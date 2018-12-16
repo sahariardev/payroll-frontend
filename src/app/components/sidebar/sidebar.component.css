@@ -1,0 +1,33 @@
+.main-sidebar
+{
+    width: 300px;
+    background-color: #f1424d;
+    height: 100%;
+    position: fixed;
+}
+.main-sidebar .title
+{
+    color: white;
+    font-size:25px;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    padding: 15px;
+    border-bottom:3px solid white;  
+}
+.main-sidebar .menu-container 
+{
+  margin: 30px 20px;
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+ 
+
+}
+.main-sidebar .menu-container .menu-item
+{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.main-sidebar .menu-container .menu-item:hover
+{
+    background-color:#ff6464;
+}
