@@ -8,7 +8,30 @@ import { Component, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   title='Payroll';
-  menuItems=['Dashboard','Employees','Attendence/Production','Units','Attendence/Production Type']
+  menuItems=[
+     {
+       name:'Dashboard',
+       link:'/'
+     },
+     {
+       name:'Employees',
+       link:'/employees'
+     },
+     {
+       name:'Attendence/Production',
+       link:'/'
+     },
+     {
+       name:'Units',
+       link:'/'
+     },
+     {
+       name:'Attendence/Production Type',
+       link:'/'
+     }
+   
+    
+    ]
   constructor() { }
   
   ngOnInit() {

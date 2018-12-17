@@ -6,7 +6,7 @@
   <div class="menu-container">
      <div *ngFor="let item of menuItems" class="menu-group">
       <div class="menu-item">
-         {{item}}
+        <a class=""  href="#" routerLink={{item.link}}>{{item.name}}</a>
        </div>
      </div>
   </div>
