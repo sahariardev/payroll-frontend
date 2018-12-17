@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import {EmployeesComponent} from './components/employees/Employees.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {HttpClientModule} from '@angular/common/http'
 
 const appRoutes:Routes=[
  {
@@ -25,7 +26,9 @@ const appRoutes:Routes=[
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
