@@ -1,3 +1,25 @@
 <p>
   employees works!
 </p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Date Of Joining</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+    <tr *ngFor="let employee of employees; index as i" (click)="seeDetailView(employee)">
+      <th scope="row">{{i+1}}</th>
+      <td>{{employee.name}}</td>
+      <td>{{employee.email}}</td>
+      <td>{{employee.date_of_joining}}</td>
+    </tr>
+    
+  </tbody>
+</table>
