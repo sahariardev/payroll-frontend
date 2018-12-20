@@ -9,6 +9,7 @@ import {EmployeesComponent} from './components/employees/Employees.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import { EmployeesDetailViewComponent } from './components/employees-detail-view/employees-detail-view.component';
+import { UnitsComponent } from './components/units/units.component'
 import { EmployeeFormComponent } from './components/employees/employee-form/employee-form.component'
 
 
@@ -22,7 +23,9 @@ const appRoutes:Routes=[
  {
     path:'',component:DashboardComponent
  },
-
+ {
+   path:'units', component:UnitsComponent
+ },
 
 ];
 @NgModule({
@@ -32,7 +35,9 @@ const appRoutes:Routes=[
     EmployeesComponent,
     DashboardComponent,
     EmployeesDetailViewComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    UnitsComponent
+
   ],
   imports: [
     BrowserModule,
