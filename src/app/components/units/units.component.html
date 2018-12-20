@@ -1,7 +1,5 @@
-<p>
-    employees works!
-  </p>
-  
+
+ <button class="btn btn-default" (click)="addNew()">Add new unit</button>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -21,4 +19,7 @@
       
     </tbody>
   </table>
-  
+
+<div [@popOverState]="stateName">  
+<app-unit-form (messageEvent)="receiveMessage($event)"></app-unit-form>
+</div>

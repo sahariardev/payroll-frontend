@@ -10,7 +10,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import { EmployeesDetailViewComponent } from './components/employees-detail-view/employees-detail-view.component';
 import { UnitsComponent } from './components/units/units.component'
-import { EmployeeFormComponent } from './components/employees/employee-form/employee-form.component'
+import { EmployeeFormComponent } from './components/employees/employee-form/employee-form.component';
+import { UnitFormComponent } from './components/units/unit-form/unit-form.component'
 
 
 const appRoutes:Routes=[
@@ -36,7 +37,8 @@ const appRoutes:Routes=[
     DashboardComponent,
     EmployeesDetailViewComponent,
     EmployeeFormComponent,
-    UnitsComponent
+    UnitsComponent,
+    UnitFormComponent
 
   ],
   imports: [

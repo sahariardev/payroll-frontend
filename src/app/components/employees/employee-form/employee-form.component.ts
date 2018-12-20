@@ -1,5 +1,6 @@
 import { Component, OnInit, Input,Output,EventEmitter
  } from '@angular/core';
+ import {isUndefined} from '../../helper';
 
 @Component({
   selector: 'app-employee-form',
@@ -11,19 +12,19 @@ export class EmployeeFormComponent implements OnInit {
 
   @Input() employee:any;  
   @Output() messageEvent=new EventEmitter<boolean>();
-  constructor() { }
-  ngOnInit() {
-  }
-
-  
-  newEmployeeInfo={
+   newEmployeeInfo={
     name:''
+  }
+  
+  constructor() { }
+  
+  ngOnInit() {
   }
 
   submit()
   {
     this.sendMessageToParent(true);
-    if(this.isUndefined(this.employee))
+    if(isUndefined(this.employee))
     {
       //create a post request
     }
@@ -32,19 +33,10 @@ export class EmployeeFormComponent implements OnInit {
       //create a put request
     }
   }
+
   sendMessageToParent(message:boolean)
   {
     this.messageEvent.emit(message);
   }
-  isUndefined(object)
-  {
-       if(object ===undefined)
-       {
-         return true;
-       } 
-       else
-       {
-         return false;
-       }
-  }
+
 }
