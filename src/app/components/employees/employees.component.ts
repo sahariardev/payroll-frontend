@@ -37,5 +37,8 @@ export class EmployeesComponent implements OnInit {
     console.log(employee);
     this.router.navigate(['/employees',employee.id]);
   }
-
+  receiveMessage($event)
+  {
+      console.log("Message is "+$event); 
+  }
 }

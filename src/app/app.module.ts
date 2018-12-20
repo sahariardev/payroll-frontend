@@ -6,7 +6,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import {EmployeesComponent} from './components/employees/Employees.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
-import { EmployeesDetailViewComponent } from './components/employees-detail-view/employees-detail-view.component'
+import { EmployeesDetailViewComponent } from './components/employees-detail-view/employees-detail-view.component';
+import { EmployeeFormComponent } from './components/employees/employee-form/employee-form.component'
 
 const appRoutes:Routes=[
  {
@@ -27,7 +28,8 @@ const appRoutes:Routes=[
     SidebarComponent,
     EmployeesComponent,
     DashboardComponent,
-    EmployeesDetailViewComponent
+    EmployeesDetailViewComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,

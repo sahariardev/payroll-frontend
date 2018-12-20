@@ -1,0 +1,17 @@
+
+
+<div class="modal-wrapper">
+  <div class="modal-contain">
+     <div class="container">
+    
+  <div class="form-group">
+    <label for="exampleInputEmail1">Employee name</label>
+    
+    <input type="text" class="form-control"  *ngIf="employee"  placeholder="names">
+    <input type="text" class="form-control"  *ngIf="!employee" placeholder="name">
+  </div>
+  <button  class="btn btn-primary" (click)="submit()">Submit</button>
+
+</div>     
+  </div>
+</div>
