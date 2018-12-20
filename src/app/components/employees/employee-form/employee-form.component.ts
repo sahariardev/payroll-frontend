@@ -15,7 +15,7 @@ export class EmployeeFormComponent implements OnInit {
   ngOnInit() {
   }
 
- 
+  
   newEmployeeInfo={
     name:''
   }

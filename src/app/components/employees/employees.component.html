@@ -1,7 +1,4 @@
-<p>
-  employees works!
-</p>
-
+<button class="btn btn-default" (click)="addNewEmployee()">Add new employee</button>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -23,4 +20,6 @@
     
   </tbody>
 </table>
-<app-employee-form (messageEvent)="receiveMessage($event)"></app-employee-form>
+<div [@popOverState]="stateName">
+ <app-employee-form (messageEvent)="receiveMessage($event)"></app-employee-form>
+</div>
