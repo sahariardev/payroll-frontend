@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
      },
      {
        name:'Units',
-       link:'/'
+       link:'/units'
      },
      {
        name:'Attendence/Production Type',

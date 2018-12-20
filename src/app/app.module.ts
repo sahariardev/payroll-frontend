@@ -6,7 +6,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import {EmployeesComponent} from './components/employees/Employees.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
-import { EmployeesDetailViewComponent } from './components/employees-detail-view/employees-detail-view.component'
+import { EmployeesDetailViewComponent } from './components/employees-detail-view/employees-detail-view.component';
+import { UnitsComponent } from './components/units/units.component'
 
 const appRoutes:Routes=[
  {
@@ -18,7 +19,9 @@ const appRoutes:Routes=[
  {
     path:'',component:DashboardComponent
  },
-
+ {
+   path:'units', component:UnitsComponent
+ },
 
 ];
 @NgModule({
@@ -27,7 +30,8 @@ const appRoutes:Routes=[
     SidebarComponent,
     EmployeesComponent,
     DashboardComponent,
-    EmployeesDetailViewComponent
+    EmployeesDetailViewComponent,
+    UnitsComponent
   ],
   imports: [
     BrowserModule,
