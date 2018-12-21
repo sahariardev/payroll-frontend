@@ -1,0 +1,10 @@
+
+<div class="" *ngIf="unit">
+    {{unit.name}}
+    {{unit.symbol}}
+    {{unit.description}}
+</div>
+<button class="btn btn-default" (click)="edit()">Edit </button>
+<div [@popOverState]="stateName">  
+<app-unit-form (messageEvent)="receiveMessage($event)" [unit]="unit"></app-unit-form>
+</div>

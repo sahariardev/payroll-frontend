@@ -12,7 +12,7 @@ import {getHost} from '../../config';
 export class UnitFormComponent implements OnInit {
   
    @Input() unit:any;
-   host:any;
+   endpoint=getHost();
    @Output() messageEvent=new EventEmitter<boolean>();
    newUnitInfo={
      "name":'',
@@ -22,29 +22,40 @@ export class UnitFormComponent implements OnInit {
 
   constructor(public http:HttpClient) { }
 
+
   ngOnInit() {
-    this.host=getHost();
+    
   }
 
  submit()
   {
-    this.sendMessageToParent(true);
+    
     if(isUndefined(this.unit))
     {
       let data=new FormData();
       data.append("name",this.newUnitInfo.name);
       data.append("symbol",this.newUnitInfo.symbol);
       data.append("description",this.newUnitInfo.description);
-      console.log(this.newUnitInfo);
-      let url=this.host+"/api/units/create/"
-      let l=JSON.stringify(this.newUnitInfo); 
+      let url=this.endpoint+"/api/units/create/"
       this.http.post(url,data).subscribe((response)=>{
          console.log(response); 
+         this.sendMessageToParent(true);
       })
     }
     else
     {
       //create a put request
+      let formData=new FormData();
+      formData.append("id",this.unit.id);
+      formData.append("name",this.unit.name);
+      formData.append("symbol",this.unit.symbol);
+      formData.append("description",this.unit.description); 
+      console.log(this.unit);
+      let endpointUrlForUpdatingUnit=this.endpoint+"/api/units/"+this.unit.id+"/edit/";
+      this.http.put(endpointUrlForUpdatingUnit,formData).subscribe((response)=>{
+          this.sendMessageToParent(true);
+      });
+
     }
   }
 

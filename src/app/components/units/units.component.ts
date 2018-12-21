@@ -55,12 +55,16 @@ export class UnitsComponent implements OnInit {
   {
       console.log("Message is "+$event); 
       this.show=false;
+      this.getAllUnits();
   }
   addNew()
   {
     this.show=true;
   }
-  
+  seeDetailView(unit)
+  {
+    this.router.navigate(['/units',unit.id]);
+  }  
 
 
 
