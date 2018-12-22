@@ -1,0 +1,25 @@
+
+ <button class="btn btn-default" (click)="addNew()">Add new designation</button>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+      <tr *ngFor="let designation of designations; index as i" (click)="seeDetailView(designation)">
+        <th scope="row">{{i+1}}</th>
+        <td>{{designation.name}}</td>
+        <td>{{designation.description}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+<div [@popOverState]="stateName">  
+<app-designation-form (messageEvent)="receiveMessage($event)"></app-designation-form>
+</div>

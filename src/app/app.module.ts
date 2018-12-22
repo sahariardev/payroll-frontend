@@ -15,7 +15,10 @@ import { UnitFormComponent } from './components/units/unit-form/unit-form.compon
 import { UnitDetailComponent } from './components/units/unit-detail/unit-detail.component';
 import { PackagesComponent } from './components/packages/packages.component';
 import { PackageDetailComponent } from './components/packages/package-detail/package-detail.component';
-import { PackageFormComponent } from './components/packages/package-form/package-form.component'
+import { PackageFormComponent } from './components/packages/package-form/package-form.component';
+import { DesignationsComponent } from './components/designations/designations.component';
+import { DesignationFormComponent } from './components/designations/designation-form/designation-form.component';
+import { DesignationDetailComponent } from './components/designations/designation-detail/designation-detail.component'
 
 
 const appRoutes:Routes=[
@@ -40,6 +43,12 @@ const appRoutes:Routes=[
  {
    path:'packages/:id', component:PackageDetailComponent
   },
+  {
+   path:'designations', component:DesignationsComponent
+ },
+ {
+   path:'designations/:id', component:DesignationDetailComponent
+  },
 
 ];
 @NgModule({
@@ -55,7 +64,10 @@ const appRoutes:Routes=[
     UnitDetailComponent,
     PackagesComponent,
     PackageDetailComponent,
-    PackageFormComponent
+    PackageFormComponent,
+    DesignationsComponent,
+    DesignationFormComponent,
+    DesignationDetailComponent
 
   ],
   imports: [

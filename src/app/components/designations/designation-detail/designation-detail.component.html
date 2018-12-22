@@ -1,0 +1,9 @@
+
+<div class="" *ngIf="designation">
+    {{designation.name}}
+    {{designation.description}}
+</div>
+<button class="btn btn-default" (click)="edit()">Edit </button>
+<div [@popOverState]="stateName">  
+<app-designation-form (messageEvent)="receiveMessage($event)" [designation]="designation"></app-designation-form>
+</div>

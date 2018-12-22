@@ -30,6 +30,10 @@ export class SidebarComponent implements OnInit {
        link:'/packages'
      },
      {
+       name:'Designations',
+       link:'/designations'
+     },
+     {
        name:'Attendence/Production Type',
        link:'/'
      }
