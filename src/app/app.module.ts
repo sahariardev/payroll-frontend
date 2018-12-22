@@ -19,7 +19,8 @@ import { PackageFormComponent } from './components/packages/package-form/package
 import { DesignationsComponent } from './components/designations/designations.component';
 import { DesignationFormComponent } from './components/designations/designation-form/designation-form.component';
 import { DesignationDetailComponent } from './components/designations/designation-detail/designation-detail.component';
-import { ProductionAttendaceTypeComponent } from './components/production-attendace-type/production-attendace-type.component'
+import { ProductionAttendaceTypeComponent } from './components/production-attendace-type/production-attendace-type.component';
+import { ProductionAttendanceTypeDetailComponent } from './components/productionAttendaceType/production-attendance-type-detail/production-attendance-type-detail.component'
 
 
 const appRoutes:Routes=[
@@ -69,7 +70,8 @@ const appRoutes:Routes=[
     DesignationsComponent,
     DesignationFormComponent,
     DesignationDetailComponent,
-    ProductionAttendaceTypeComponent
+    ProductionAttendaceTypeComponent,
+    ProductionAttendanceTypeDetailComponent
 
   ],
   imports: [

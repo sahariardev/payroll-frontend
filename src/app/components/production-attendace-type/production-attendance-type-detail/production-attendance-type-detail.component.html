@@ -1,0 +1,10 @@
+
+<div class="" *ngIf="productionAttendaceType">
+    {{productionAttendaceType.name}}
+    {{productionAttendaceType.type}}
+
+</div>
+<button class="btn btn-default" (click)="edit()">Edit </button>
+<div [@popOverState]="stateName">  
+<app-production-attendace-type-form (messageEvent)="receiveMessage($event)" [productionAttendaceType]="productionAttendaceType"></app-production-attendace-type-form>
+</div>
