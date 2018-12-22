@@ -1,0 +1,25 @@
+
+ <button class="btn btn-default" (click)="addNew()">Add new production attendace type</button>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+      <tr *ngFor="let productionAttendaceType of productionAttendaceTypes; index as i" (click)="seeDetailView(productionAttendaceType)">
+        <th scope="row">{{i+1}}</th>
+        <td>{{productionAttendaceType.name}}</td>
+        <td>{{productionAttendaceType.type}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+<div [@popOverState]="stateName">  
+<app-production-attendace-type-form (messageEvent)="receiveMessage($event)"></app-production-attendace-type-form>
+</div>

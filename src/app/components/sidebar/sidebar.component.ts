@@ -18,10 +18,6 @@ export class SidebarComponent implements OnInit {
        link:'/employees'
      },
      {
-       name:'Attendence/Production',
-       link:'/'
-     },
-     {
        name:'Units',
        link:'/units'
      },
@@ -33,10 +29,7 @@ export class SidebarComponent implements OnInit {
        name:'Designations',
        link:'/designations'
      },
-     {
-       name:'Attendence/Production Type',
-       link:'/'
-     }
+     
    
     
     ]

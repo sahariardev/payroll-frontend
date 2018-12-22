@@ -18,7 +18,8 @@ import { PackageDetailComponent } from './components/packages/package-detail/pac
 import { PackageFormComponent } from './components/packages/package-form/package-form.component';
 import { DesignationsComponent } from './components/designations/designations.component';
 import { DesignationFormComponent } from './components/designations/designation-form/designation-form.component';
-import { DesignationDetailComponent } from './components/designations/designation-detail/designation-detail.component'
+import { DesignationDetailComponent } from './components/designations/designation-detail/designation-detail.component';
+import { ProductionAttendaceTypeComponent } from './components/production-attendace-type/production-attendace-type.component'
 
 
 const appRoutes:Routes=[
@@ -67,7 +68,8 @@ const appRoutes:Routes=[
     PackageFormComponent,
     DesignationsComponent,
     DesignationFormComponent,
-    DesignationDetailComponent
+    DesignationDetailComponent,
+    ProductionAttendaceTypeComponent
 
   ],
   imports: [

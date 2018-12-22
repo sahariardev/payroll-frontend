@@ -4,11 +4,10 @@ import {getHost} from '../config';
 import {Router} from '@angular/router';
 import {trigger,state,style,animate,transition} from '@angular/animations';
 
-
 @Component({
-  selector: 'app-units',
-  templateUrl: './units.component.html',
-  styleUrls: ['./units.component.css'],
+  selector: 'app-production-attendace-type',
+  templateUrl: './production-attendace-type.component.html',
+  styleUrls: ['./production-attendace-type.component.css'],
   animations:[
     trigger('popOverState',[
        state('show',style({
@@ -26,25 +25,25 @@ import {trigger,state,style,animate,transition} from '@angular/animations';
     ])
   ] 
 })
-export class UnitsComponent implements OnInit {
+export class ProductionAttendaceTypeComponent implements OnInit {
 
-  constructor(public  http:HttpClient,public router:Router) { }
+ constructor(public  http:HttpClient,public router:Router) { }
   host:string;
-  units:any;
+  productionAttendanceTypes:any;
   show=false;
   ngOnInit() {
-    this.host=getHost()+"/api/units";
+    this.host=getHost()+"/api/productionattendancetypes";
     console.log(this.host);
-    this. getAllUnits();
+    this. getAllproductionAttendanceTypes();
   }
 
-  getAllUnits()
+  getAllproductionAttendanceTypes()
   {
     this.http.get(this.host).subscribe((response)=>{
        console.log("rep")
        console.log(response);
-       this.units=response;
-       console.log(this.units);
+       this.productionAttendanceTypes=response;
+       console.log(this.productionAttendanceTypes);
     });
   }
 
@@ -53,16 +52,17 @@ export class UnitsComponent implements OnInit {
   }
   receiveMessage($event)
   {
-      console.log("Message is "+$event); 
       this.show=false;
-      this.getAllUnits();
+      this.getAllproductionAttendanceTypes();
   }
   addNew()
   {
     this.show=true;
   }
-  seeDetailView(unit)
+  seeDetailView(productionAttendanceType)
   {
-    this.router.navigate(['/units',unit.id]);
+    this.router.navigate(['/productionattendancetypes',productionAttendanceType.id]);
   }  
+
+
 }
