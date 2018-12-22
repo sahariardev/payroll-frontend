@@ -1,0 +1,13 @@
+
+<div class="" *ngIf="package">
+    {{package.name}}
+    {{package.salary}}
+    {{package.annual_leave}}
+    {{package.sick_leave}}
+    {{package.extra}}
+    {{package.description}}
+</div>
+<button class="btn btn-default" (click)="edit()">Edit </button>
+<div [@popOverState]="stateName">  
+    <app-package-form (messageEvent)="receiveMessage($event)" [package]="package"></app-package-form>
+</div>

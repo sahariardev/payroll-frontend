@@ -12,7 +12,10 @@ import { EmployeesDetailViewComponent } from './components/employees-detail-view
 import { UnitsComponent } from './components/units/units.component'
 import { EmployeeFormComponent } from './components/employees/employee-form/employee-form.component';
 import { UnitFormComponent } from './components/units/unit-form/unit-form.component';
-import { UnitDetailComponent } from './components/units/unit-detail/unit-detail.component'
+import { UnitDetailComponent } from './components/units/unit-detail/unit-detail.component';
+import { PackagesComponent } from './components/packages/packages.component';
+import { PackageDetailComponent } from './components/packages/package-detail/package-detail.component';
+import { PackageFormComponent } from './components/packages/package-form/package-form.component'
 
 
 const appRoutes:Routes=[
@@ -31,6 +34,12 @@ const appRoutes:Routes=[
  {
    path:'units/:id', component:UnitDetailComponent
   },
+  {
+   path:'packages', component:PackagesComponent
+ },
+ {
+   path:'packages/:id', component:PackageDetailComponent
+  },
 
 ];
 @NgModule({
@@ -43,7 +52,10 @@ const appRoutes:Routes=[
     EmployeeFormComponent,
     UnitsComponent,
     UnitFormComponent,
-    UnitDetailComponent
+    UnitDetailComponent,
+    PackagesComponent,
+    PackageDetailComponent,
+    PackageFormComponent
 
   ],
   imports: [

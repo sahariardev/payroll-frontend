@@ -1,0 +1,25 @@
+
+ <button class="btn btn-default" (click)="addNew()">Add new package</button>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+      <tr *ngFor="let package of packages; index as i" (click)="seeDetailView(package)">
+        <th scope="row">{{i+1}}</th>
+        <td>{{package.name}}</td>
+        <td>{{package.salary}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+<div [@popOverState]="stateName">  
+<app-package-form (messageEvent)="receiveMessage($event)"></app-package-form>
+</div>

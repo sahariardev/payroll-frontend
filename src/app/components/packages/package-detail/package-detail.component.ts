@@ -5,9 +5,9 @@ import {getHost} from '../../config';
 import {trigger,state,style,animate,transition} from '@angular/animations';
 
 @Component({
-  selector: 'app-unit-detail',
-  templateUrl: './unit-detail.component.html',
-  styleUrls: ['./unit-detail.component.css'],
+  selector: 'app-package-detail',
+  templateUrl: './package-detail.component.html',
+  styleUrls: ['./package-detail.component.css'],
   animations:[
     trigger('popOverState',[
        state('show',style({
@@ -23,52 +23,48 @@ import {trigger,state,style,animate,transition} from '@angular/animations';
        transition('hide=>show', animate('600ms ease-in')),     
 
     ])
-  ] 
+  ]
+  
 })
-export class UnitDetailComponent implements OnInit {
+export class PackageDetailComponent implements OnInit {
+   
   id:number;
   endpoint:string;
-  unit:any;
+  package:any;
   show:boolean;
-  
-  constructor(
+
+ constructor(
                 private route:ActivatedRoute,
                 private http:HttpClient      
   ) {
     this.show=false;
    }
   
+
   ngOnInit() {
-    this.endpoint=getHost()+"/api/units/";
-    //catching the id from the url
+    this.endpoint=getHost()+"/api/packages/";
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
     this.loadData(); 
-    
   }
   loadData()
   {
      //fethcing the data using the id
     let url=this.endpoint+""+this.id;
+    console.log("url is "+url);
     this.http.get(url).subscribe((response)=>{
-      this.unit=response;
-      //debuggin the log 
-      console.log(this.unit);
+      this.package=response;
     });
   }
   //receving message from child component
   receiveMessage($event)
   {
-      console.log("Message is "+$event); 
-      this.show=false;
-      
+      this.show=false;      
   }
-  //while click on edit button show the form
   edit()
   {
      this.show=true;
   }
-  
-  //animation related methods amd properties
+  //animation related methods
    get stateName(){
     return this.show ? 'show' : 'hide'  
   }
