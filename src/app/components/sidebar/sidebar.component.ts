@@ -29,6 +29,10 @@ export class SidebarComponent implements OnInit {
        name:'Designations',
        link:'/designations'
      },
+     {
+       name:'Production-attendance types',
+       link:'/productionattendancetypes'
+     },
      
    
     

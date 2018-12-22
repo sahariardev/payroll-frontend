@@ -29,7 +29,7 @@ export class ProductionAttendanceTypeDetailComponent implements OnInit {
 
   id:number;
   endpoint:string;
-  productionAttendaceType:any;
+  productionAttendanceTypes:any;
   show:boolean;
   
   constructor(
@@ -40,7 +40,7 @@ export class ProductionAttendanceTypeDetailComponent implements OnInit {
    }
   
   ngOnInit() {
-    this.endpoint=getHost()+"/api/productionattendacetypes/";
+    this.endpoint=getHost()+"/api/productionattendancetypes/";
     //catching the id from the url
     this.id=parseInt(this.route.snapshot.paramMap.get('id'));
     this.loadData(); 
@@ -51,9 +51,9 @@ export class ProductionAttendanceTypeDetailComponent implements OnInit {
      //fethcing the data using the id
     let url=this.endpoint+""+this.id;
     this.http.get(url).subscribe((response)=>{
-      this.productionAttendaceType=response;
+      this.productionAttendanceTypes=response;
       //debuggin the log 
-      console.log(this.productionAttendaceType);
+      console.log(this.productionAttendanceTypes);
     });
   }
   //receving message from child component

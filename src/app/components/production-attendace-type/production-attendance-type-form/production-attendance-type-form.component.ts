@@ -11,13 +11,28 @@ import {getHost} from '../../config';
 })
 export class ProductionAttendanceTypeFormComponent implements OnInit {
 
-  @Input() productionAttendaceType:any;
+  @Input() productionAttendanceTypes:any;
    endpoint=getHost();
    @Output() messageEvent=new EventEmitter<boolean>();
-   newProductionAttendaceTypeInfo={
+   newProductionAttendanceTypeInfo={
      "name":'',
      "type":''   
    }
+   produtionattendacetypeoptions=[
+     {
+       name:'Production',
+       value:'Production'
+     },
+     {
+       name:'Attendance or leave with pay',
+       value:'attendance/leave with pay'
+     },
+     {
+       name:'Attendance or leave without pay',
+       value:'attendance/leave without pay'
+     }
+
+   ];
 
   constructor(public http:HttpClient) { }
 
@@ -29,12 +44,12 @@ export class ProductionAttendanceTypeFormComponent implements OnInit {
  submit()
   {
     
-    if(isUndefined(this.productionAttendaceType))
+    if(isUndefined(this.productionAttendanceTypes))
     {
       let data=new FormData();
-      data.append("name",this.newProductionAttendaceTypeInfo.name);
-      data.append("type",this.newProductionAttendaceTypeInfo.type);
-      let url=this.endpoint+"/api/productionAttendaceTypes/create/"
+      data.append("name",this.newProductionAttendanceTypeInfo.name);
+      data.append("type",this.newProductionAttendanceTypeInfo.type);
+      let url=this.endpoint+"/api/productionattendancetypes/create/"
       this.http.post(url,data).subscribe((response)=>{
          console.log(response); 
          this.sendMessageToParent(true);
@@ -44,11 +59,11 @@ export class ProductionAttendanceTypeFormComponent implements OnInit {
     {
       //create a put request  
       let formData=new FormData();
-      formData.append("id",this.productionAttendaceType.id);
-      formData.append("name",this.productionAttendaceType.name);
-      formData.append("type",this.productionAttendaceType.symbol);
-      console.log(this.productionAttendaceType);
-      let endpointUrlForUpdatingproductionAttendaceType=this.endpoint+"/api/productionAttendaceTypes/"+this.productionAttendaceType.id+"/edit/";
+      formData.append("id",this.productionAttendanceTypes.id);
+      formData.append("name",this.productionAttendanceTypes.name);
+      formData.append("type",this.productionAttendanceTypes.type);
+      console.log(this.productionAttendanceTypes);
+      let endpointUrlForUpdatingproductionAttendaceType=this.endpoint+"/api/productionattendancetypes/"+this.productionAttendanceTypes.id+"/edit/";
       this.http.put(endpointUrlForUpdatingproductionAttendaceType,formData).subscribe((response)=>{
           this.sendMessageToParent(true);
       });

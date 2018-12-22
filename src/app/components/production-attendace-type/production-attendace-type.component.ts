@@ -61,6 +61,7 @@ export class ProductionAttendaceTypeComponent implements OnInit {
   }
   seeDetailView(productionAttendanceType)
   {
+    console.log("here")
     this.router.navigate(['/productionattendancetypes',productionAttendanceType.id]);
   }  
 

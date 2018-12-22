@@ -20,7 +20,7 @@ import { DesignationsComponent } from './components/designations/designations.co
 import { DesignationFormComponent } from './components/designations/designation-form/designation-form.component';
 import { DesignationDetailComponent } from './components/designations/designation-detail/designation-detail.component';
 import { ProductionAttendaceTypeComponent } from './components/production-attendace-type/production-attendace-type.component';
-import { ProductionAttendanceTypeDetailComponent } from './components/productionAttendaceType/production-attendance-type-detail/production-attendance-type-detail.component';
+import { ProductionAttendanceTypeDetailComponent } from './components/production-attendace-type/production-attendance-type-detail/production-attendance-type-detail.component';
 import { ProductionAttendanceTypeFormComponent } from './components/production-attendace-type/production-attendance-type-form/production-attendance-type-form.component'
 
 
@@ -52,7 +52,12 @@ const appRoutes:Routes=[
  {
    path:'designations/:id', component:DesignationDetailComponent
   },
-
+  {
+   path:'productionattendancetypes', component:ProductionAttendaceTypeComponent
+ },
+ {
+   path:'productionattendancetypes/:id', component:ProductionAttendanceTypeDetailComponent
+  },
 ];
 @NgModule({
   declarations: [

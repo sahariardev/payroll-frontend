@@ -3,15 +3,23 @@
      <div class="container">
     
   <div class="form-group">
-    <label for="exampleInputEmail1">productionAttendaceType name</label>
+    <label for="exampleInputEmail1">Production or attendace type name</label>
     
-    <input type="text" class="form-control"  [(ngModel)]="productionAttendaceType.name" name="productionAttendaceType.name" *ngIf="productionAttendaceType"  placeholder="name">
-    <input type="text" class="form-control"  [(ngModel)]="newProductionAttendaceTypeInfo.name" name="newproductionAttendaceTypenfo.name" *ngIf="!productionAttendaceType" placeholder="name">
+    <input type="text" class="form-control"  [(ngModel)]="productionAttendanceTypes.name" name="productionAttendanceTypes.name" *ngIf="productionAttendanceTypes"  placeholder="name">
+    <input type="text" class="form-control"  [(ngModel)]="newProductionAttendanceTypeInfo.name" name="newproductionAttendaceTypenfo.name" *ngIf="!productionAttendanceTypes" placeholder="name">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">productionAttendaceType type</label>
-    <input type="text" class="form-control"  [(ngModel)]="productionAttendaceType.type" name="productionAttendaceType.type" *ngIf="productionAttendaceType"  placeholder="typee">
-    <input type="text" class="form-control"   [(ngModel)]="newProductionAttendaceTypeInfo.type" name="newProductionAttendaceTypeInfo.type" *ngIf="!productionAttendaceType" placeholder="Address">
+    <label for="exampleInputEmail1">Production or attendace type </label>
+    <select class="form-control" [(ngModel)]="productionAttendanceTypes.type" name="productionAttendanceTypes.type" *ngIf="productionAttendanceTypes">
+      <option *ngFor="let o of produtionattendacetypeoptions" value={{o.value}}>
+        {{o.name}}
+      </option>
+    </select>  
+    <select class="form-control" [(ngModel)]="newProductionAttendanceTypeInfo.type" name="newProductionAttendanceTypeInfo.type" *ngIf="!productionAttendanceTypes">
+      <option *ngFor="let o of produtionattendacetypeoptions" value={{o.value}}>
+        {{o.name}}
+      </option>
+    </select> 
   </div>
   <button  class="btn btn-primary" (click)="submit()">Submit</button>
 
