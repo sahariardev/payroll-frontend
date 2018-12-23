@@ -28,11 +28,63 @@
     <input type="text" class="form-control"  [(ngModel)]="employee.contact" name="employee.contact" *ngIf="employee"  placeholder="contact number">
     <input type="text" class="form-control"   [(ngModel)]="newEmployeeInfo.contact" name="newEmployeeInfo.contact" *ngIf="!employee" placeholder="contact number">
   </div>
-   <div class="form-group">
+  <div class="form-group">
     <label for="exampleInputEmail1">Blood Group</label>
     <input type="text" class="form-control"  [(ngModel)]="employee.blood_group" name="employee.blood_group" *ngIf="employee"  placeholder="Blood group">
     <input type="text" class="form-control"   [(ngModel)]="newEmployeeInfo.blood_group" name="newEmployeeInfo.blood_group" *ngIf="!employee" placeholder="Blood group">
   </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Date of birth</label>
+    <input type="date" class="form-control"  [(ngModel)]="employee.date_of_birth" name="employee.date_of_birth" *ngIf="employee"  placeholder="Blood group">
+    <input type="date" class="form-control"   [(ngModel)]="newEmployeeInfo.date_of_birth" name="newEmployeeInfo.date_of_birth" *ngIf="!employee" placeholder="Blood group">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Date of joining</label>
+    <input type="date" class="form-control"  [(ngModel)]="employee.date_of_joining" name="employee.date_of_joining" *ngIf="employee"  placeholder="Blood group">
+    <input type="date" class="form-control"   [(ngModel)]="newEmployeeInfo.date_of_joining" name="newEmployeeInfo.date_of_joining" *ngIf="!employee" placeholder="Blood group">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Gender</label>
+    <select class="form-control" [(ngModel)]="newEmployeeInfo.gender" name="newEmployeeInfo.gender" *ngIf="!employee">
+      <option *ngFor="let g of genderChoices" value={{g.value}}> {{g.name}} </option>
+    </select>
+    <select class="form-control" [(ngModel)]="employee.gender" name="employee.gender" *ngIf="employee">
+      <option *ngFor="let g of genderChoices" value={{g.value}}> {{g.name}} </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Marital status</label>
+    <select class="form-control" [(ngModel)]="newEmployeeInfo.marital_status" name="newEmployeeInfo.marital_status" *ngIf="!employee">
+      <option *ngFor="let m of maritalStatusChoices" value={{m.value}}> {{m.name}} </option>
+    </select>
+    <select class="form-control" [(ngModel)]="employee.marital_status" name="employee.marital_status" *ngIf="employee">
+      <option *ngFor="let m of maritalStatusChoices" value={{m.value}}> {{m.name}} </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Spouse name</label>
+     <input type="text" class="form-control"  [(ngModel)]="employee.spouse_name" name="employee.spouse_name" *ngIf="employee"  >
+     <input type="text" class="form-control"   [(ngModel)]="newEmployeeInfo.spouse_name" name="newEmployeeInfo.spouse_name" *ngIf="!employee" > 
+  </div>
+<div class="form-group">
+ <label for="">Designation</label>
+ <select [(ngModel)]="employee.designation" name="employee.designation"  *ngIf="employee" class="form-control">
+  <option *ngFor="let d of designations" value={{d.id}}>{{d.name}}</option>
+ </select>
+ <select [(ngModel)]="newEmployeeInfo.designation" name="newEmployeeInfo.designation"  *ngIf="!employee" class="form-control">
+  <option *ngFor="let d of designations" value={{d.id}}>{{d.name}}</option>
+ </select>
+</div>
+<div class="form-group">
+ <label for="">Package</label>
+ <select [(ngModel)]="employee.peckage" name="employee.peckage"  *ngIf="employee" class="form-control">
+  <option *ngFor="let d of packages" value={{d.id}}>{{d.name}}</option>
+ </select>
+ <select [(ngModel)]="newEmployeeInfo.peckage" name="newEmployeeInfo.peckage"  *ngIf="!employee" class="form-control">
+  <option *ngFor="let d of packages" value={{d.id}}>{{d.name}}</option>
+ </select>
+</div>
+
   <button  class="btn btn-primary" (click)="submit()">Submit</button>
 
 </div>     
