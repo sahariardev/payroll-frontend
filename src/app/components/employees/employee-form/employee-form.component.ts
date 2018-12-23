@@ -78,7 +78,7 @@ export class EmployeeFormComponent implements OnInit {
     }
     else
     {
-       let puttRequestUrl=this.endpoint+"/api/employees/"+this.employee.id+"/edit";
+       let puttRequestUrl=this.endpoint+"/api/employees/"+this.employee.id+"/edit/";
        console.log(this.employee);
        this.http.put(puttRequestUrl,this.employee).subscribe((response)=>{
          console.log(response);

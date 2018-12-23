@@ -37,3 +37,7 @@
      {{employee.peckage}}
    </div>
 </div>
+<button class="btn btn-default" (click)="edit()">Edit </button>
+<div [@popOverState]="stateName">
+ <app-employee-form (messageEvent)="receiveMessage($event)" [employee]="employee"></app-employee-form>
+</div>
