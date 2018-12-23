@@ -64,8 +64,9 @@ export class EmployeesComponent implements OnInit {
   }
   receiveMessage($event)
   {
-      console.log("Message is "+$event); 
+     this.getAllEmployees(); 
       this.show=false;
+    
   }
   addNewEmployee()
   {

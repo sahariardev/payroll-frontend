@@ -65,7 +65,7 @@ export class EmployeeFormComponent implements OnInit {
 
   submit()
   {
-    this.sendMessageToParent(true);
+    
     if(isUndefined(this.employee))
     {
       //create a post request
@@ -73,12 +73,17 @@ export class EmployeeFormComponent implements OnInit {
       console.log(this.newEmployeeInfo);
       this.http.post(postRequestUrl,this.newEmployeeInfo).subscribe((response)=>{
         console.log(response);  
-
+        this.sendMessageToParent(true);  
       });
     }
     else
     {
-      //create a put request
+       let puttRequestUrl=this.endpoint+"/api/employees/"+this.employee.id+"/edit";
+       console.log(this.employee);
+       this.http.put(puttRequestUrl,this.employee).subscribe((response)=>{
+         console.log(response);
+       });
+
     }
   }
 
