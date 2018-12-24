@@ -33,7 +33,10 @@ export class SidebarComponent implements OnInit {
        name:'Production-attendance types',
        link:'/productionattendancetypes'
      },
-     
+     {
+       name:'Payhead types',
+       link:'/payheadtypes'
+     },
    
     
     ]
