@@ -37,6 +37,10 @@ export class SidebarComponent implements OnInit {
        name:'Payhead types',
        link:'/payheadtypes'
      },
+     {
+       name:'Payhead',
+       link:'/payheads'
+     },
    
     
     ]

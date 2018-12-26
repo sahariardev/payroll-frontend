@@ -24,7 +24,10 @@ import { ProductionAttendanceTypeDetailComponent } from './components/production
 import { ProductionAttendanceTypeFormComponent } from './components/production-attendace-type/production-attendance-type-form/production-attendance-type-form.component';
 import { PayheadTypeComponent } from './components/payhead-type/payhead-type.component';
 import { PayheadTypeFormComponent } from './components/payhead-type/payhead-type-form/payhead-type-form.component';
-import { PayheadTypeDetailComponent } from './components/payhead-type/payhead-type-detail/payhead-type-detail.component'
+import { PayheadTypeDetailComponent } from './components/payhead-type/payhead-type-detail/payhead-type-detail.component';
+import { PayheadComponent } from './components/payhead/payhead.component';
+import { PayheadFormComponent } from './components/payhead/payhead-form/payhead-form.component';
+import { PayheadDetailComponent } from './components/payhead/payhead-detail/payhead-detail.component'
 
 
 const appRoutes:Routes=[
@@ -66,6 +69,12 @@ const appRoutes:Routes=[
   },
   {
    path:'payheadtypes/:id', component:PayheadTypeDetailComponent
+  },
+  {
+   path:'payheads', component:PayheadComponent
+  },
+  {
+   path:'payheads/:id', component:PayheadDetailComponent
   }
 ];
 @NgModule({
@@ -90,7 +99,10 @@ const appRoutes:Routes=[
     ProductionAttendanceTypeFormComponent,
     PayheadTypeComponent,
     PayheadTypeFormComponent,
-    PayheadTypeDetailComponent
+    PayheadTypeDetailComponent,
+    PayheadComponent,
+    PayheadFormComponent,
+    PayheadDetailComponent
 
   ],
   imports: [

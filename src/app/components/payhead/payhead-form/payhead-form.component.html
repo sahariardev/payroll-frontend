@@ -1,0 +1,124 @@
+
+
+<div class="modal-wrapper">
+  <div class="modal-contain">
+     <div class="container">
+    
+  <div class="form-group">
+    <label for="exampleInputEmail1">Payhead name</label>
+    
+    <input type="text" class="form-control"  [(ngModel)]="payhead.name" name="payhead.name" *ngIf="payhead"  placeholder="name">
+    <input type="text" class="form-control"  [(ngModel)]="newpayheadInfo.name" name="newpayheadInfo.name" *ngIf="!payhead" placeholder="name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    
+    <input type="text" class="form-control"  [(ngModel)]="payhead.description" name="payhead.description" *ngIf="payhead"  placeholder="Address">
+    <input type="text" class="form-control"   [(ngModel)]="newpayheadInfo.description" name="newpayheadInfo.description" *ngIf="!payhead" placeholder="Address">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputEmail1">Add to net salary</label>
+    <select  class="form-control" [(ngModel)]="payhead.add_net_salary"  name="payhead.add_net_salary" *ngIf="payhead" >
+       <option value="true">
+         Yes
+       </option>
+       <option value="false">
+         No
+       </option>
+    </select>
+    <select  class="form-control" [(ngModel)]="newpayheadInfo.add_net_salary"  name="newpayheadInfo.add_net_salary" *ngIf="!payhead" >
+       <option value="true">
+         Yes
+       </option>
+       <option value="false">
+         No
+       </option>
+    </select>
+  </div>
+
+  <div class="form-group" >
+     <label for="">Calculation type</label>
+     <select [(ngModel)]="newpayheadInfo.calculation_type" name="newpayheadInfo.calculation_type" class="form-control" *ngIf="!payhead" >
+       <option value="c.value" *ngFor="let c of calculationType">
+         {{c.name}}
+      </option>
+     </select>
+      
+      <select [(ngModel)]="payhead.calculation_type"  name="payhead.calculation_type" class="form-control" *ngIf="payhead" >
+       <option value="c.value" *ngFor="let c of calculationType">
+         {{c.name}}
+      </option>
+     </select>
+   </div>
+  
+  
+  <div class="form-group" >
+     <label for="">Calculation period</label>
+     <select [(ngModel)]="newpayheadInfo.calculation_period"  name="newpayheadInfo.calculation_period" class="form-control" *ngIf="!payhead" >
+       <option value="c.id" *ngFor="let c of units">
+         {{c.name}}
+      </option>
+     </select>
+      
+      <select [(ngModel)]="payhead.calculation_period" name="payhead.calculation_period" class="form-control" *ngIf="payhead" >
+       <option value="c.id" *ngFor="let c of units">
+         {{c.name}}
+      </option>
+     </select>
+   </div> 
+
+   <div class="form-group" >
+     <label for="">Attendence production type:</label>
+     <select [(ngModel)]="newpayheadInfo.attendence_production_type" name="newpayheadInfo.attendence_production_type" class="form-control" *ngIf="!payhead" >
+       <option value="c.id" *ngFor="let c of attendanceprodutiontype">
+         {{c.name}}
+      </option>
+     </select>
+      
+      <select [(ngModel)]="payhead.attendence_production_type" name="payhead.attendence_production_type" class="form-control" *ngIf="payhead" >
+       <option value="c.id" *ngFor="let c of attendanceprodutiontype">
+         {{c.name}}
+      </option>
+     </select>
+   </div> 
+   
+   <div class="form-group" >
+     <label for="">Add or deduct:</label>
+     <select [(ngModel)]="newpayheadInfo.add_or_deduct" name="newpayheadInfo.add_or_deduct" class="form-control" *ngIf="!payhead" >
+       <option value="c.value" *ngFor="let c of addOrDeductsOption">
+         {{c.name}}
+      </option>
+     </select>
+      
+      <select [(ngModel)]="payhead.add_or_deduct" name="payhead.add_or_deduct" class="form-control" *ngIf="payhead" >
+       <option value="c.value" *ngFor="let c of addOrDeductsOption">
+         {{c.name}}
+      </option>
+     </select>
+   </div>  
+
+   <div class="form-group" >
+     <label for="">Under:</label>
+     <select [(ngModel)]="newpayheadInfo.under" name="newpayheadInfo.under" class="form-control" *ngIf="!payhead" >
+       <option value="c.value" *ngFor="let c of expenseOption">
+         {{c.name}}
+      </option>
+     </select>
+      
+      <select [(ngModel)]="payhead.under" name="payhead.under" class="form-control" *ngIf="payhead" >
+       <option value="c.value" *ngFor="let c of expenseOption">
+         {{c.name}}
+      </option>
+     </select>
+   </div>
+
+   
+  
+
+  
+  <button  class="btn btn-primary" (click)="submit()">Submit</button>
+   <button  class="btn btn-primary" style="margin-left:20px;" (click)="cancel()">Cancel</button>
+
+</div>     
+  </div>
+</div>
