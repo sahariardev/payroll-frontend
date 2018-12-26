@@ -91,5 +91,9 @@ export class EmployeeFormComponent implements OnInit {
   {
     this.messageEvent.emit(message);
   }
+  cancel()
+  {
+    this.sendMessageToParent(true); 
+  }
 
 }

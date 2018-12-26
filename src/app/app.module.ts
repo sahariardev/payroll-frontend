@@ -22,7 +22,9 @@ import { DesignationDetailComponent } from './components/designations/designatio
 import { ProductionAttendaceTypeComponent } from './components/production-attendace-type/production-attendace-type.component';
 import { ProductionAttendanceTypeDetailComponent } from './components/production-attendace-type/production-attendance-type-detail/production-attendance-type-detail.component';
 import { ProductionAttendanceTypeFormComponent } from './components/production-attendace-type/production-attendance-type-form/production-attendance-type-form.component';
-import { PayheadTypeComponent } from './components/payhead-type/payhead-type.component'
+import { PayheadTypeComponent } from './components/payhead-type/payhead-type.component';
+import { PayheadTypeFormComponent } from './components/payhead-type/payhead-type-form/payhead-type-form.component';
+import { PayheadTypeDetailComponent } from './components/payhead-type/payhead-type-detail/payhead-type-detail.component'
 
 
 const appRoutes:Routes=[
@@ -61,6 +63,9 @@ const appRoutes:Routes=[
   },
   {
    path:'payheadtypes', component:PayheadTypeComponent
+  },
+  {
+   path:'payheadtypes/:id', component:PayheadTypeDetailComponent
   }
 ];
 @NgModule({
@@ -83,7 +88,9 @@ const appRoutes:Routes=[
     ProductionAttendaceTypeComponent,
     ProductionAttendanceTypeDetailComponent,
     ProductionAttendanceTypeFormComponent,
-    PayheadTypeComponent
+    PayheadTypeComponent,
+    PayheadTypeFormComponent,
+    PayheadTypeDetailComponent
 
   ],
   imports: [

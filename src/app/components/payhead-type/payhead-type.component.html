@@ -1,3 +1,24 @@
-<p>
-  payhead-type works!
-</p>
+
+ <button class="btn btn-default" (click)="addNew()">Add new payheadType</button>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+      <tr *ngFor="let payheadType of payheadTypes; index as i" (click)="seeDetailView(payheadType)">
+        <th scope="row">{{i+1}}</th>
+        <td>{{payheadType.name}}</td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+
+<div [@popOverState]="stateName">  
+<app-payhead-type-form (messageEvent)="receiveMessage($event)"></app-payhead-type-form>
+</div>
