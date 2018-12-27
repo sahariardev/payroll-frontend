@@ -71,6 +71,7 @@ export class EmployeeFormComponent implements OnInit {
       //create a post request
       let postRequestUrl=this.endpoint+"/api/employees/create/";
       console.log(this.newEmployeeInfo);
+
       this.http.post(postRequestUrl,this.newEmployeeInfo).subscribe((response)=>{
         console.log(response);  
         this.sendMessageToParent(true);  
@@ -80,6 +81,8 @@ export class EmployeeFormComponent implements OnInit {
     {
        let puttRequestUrl=this.endpoint+"/api/employees/"+this.employee.id+"/edit/";
        console.log(this.employee);
+       this.employee.designation=this.employee.designation.id;
+       this.employee.packages=this.employee.packages.id;
        this.http.put(puttRequestUrl,this.employee).subscribe((response)=>{
          console.log(response);
        });

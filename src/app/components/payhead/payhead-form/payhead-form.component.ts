@@ -100,6 +100,7 @@ export class PayheadFormComponent implements OnInit {
     if(isUndefined(this.payhead))
     {
       let url=this.endpoint+"/api/payheads/create/"
+      console.log(this.newpayheadInfo); 
       this.http.post(url,this.newpayheadInfo).subscribe((response)=>{ 
          this.sendMessageToParent(true);
       })

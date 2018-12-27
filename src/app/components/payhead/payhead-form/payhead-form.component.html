@@ -39,13 +39,13 @@
   <div class="form-group" >
      <label for="">Calculation type</label>
      <select [(ngModel)]="newpayheadInfo.calculation_type" name="newpayheadInfo.calculation_type" class="form-control" *ngIf="!payhead" >
-       <option value="c.value" *ngFor="let c of calculationType">
+       <option value={{c.value}} *ngFor="let c of calculationType">
          {{c.name}}
       </option>
      </select>
       
       <select [(ngModel)]="payhead.calculation_type"  name="payhead.calculation_type" class="form-control" *ngIf="payhead" >
-       <option value="c.value" *ngFor="let c of calculationType">
+       <option value={{c.value}} *ngFor="let c of calculationType">
          {{c.name}}
       </option>
      </select>
@@ -55,13 +55,13 @@
   <div class="form-group" >
      <label for="">Calculation period</label>
      <select [(ngModel)]="newpayheadInfo.calculation_period"  name="newpayheadInfo.calculation_period" class="form-control" *ngIf="!payhead" >
-       <option value="c.id" *ngFor="let c of units">
+       <option value={{c.id}} *ngFor="let c of units">
          {{c.name}}
       </option>
      </select>
       
       <select [(ngModel)]="payhead.calculation_period" name="payhead.calculation_period" class="form-control" *ngIf="payhead" >
-       <option value="c.id" *ngFor="let c of units">
+       <option value={{c.id}} *ngFor="let c of units">
          {{c.name}}
       </option>
      </select>
@@ -70,13 +70,13 @@
    <div class="form-group" >
      <label for="">Attendence production type:</label>
      <select [(ngModel)]="newpayheadInfo.attendence_production_type" name="newpayheadInfo.attendence_production_type" class="form-control" *ngIf="!payhead" >
-       <option value="c.id" *ngFor="let c of attendanceprodutiontype">
+       <option value={{c.id}} *ngFor="let c of attendanceprodutiontype">
          {{c.name}}
       </option>
      </select>
       
       <select [(ngModel)]="payhead.attendence_production_type" name="payhead.attendence_production_type" class="form-control" *ngIf="payhead" >
-       <option value="c.id" *ngFor="let c of attendanceprodutiontype">
+       <option value={{c.id}} *ngFor="let c of attendanceprodutiontype">
          {{c.name}}
       </option>
      </select>
@@ -85,13 +85,13 @@
    <div class="form-group" >
      <label for="">Add or deduct:</label>
      <select [(ngModel)]="newpayheadInfo.add_or_deduct" name="newpayheadInfo.add_or_deduct" class="form-control" *ngIf="!payhead" >
-       <option value="c.value" *ngFor="let c of addOrDeductsOption">
+       <option value={{c.value}} *ngFor="let c of addOrDeductsOption">
          {{c.name}}
       </option>
      </select>
       
       <select [(ngModel)]="payhead.add_or_deduct" name="payhead.add_or_deduct" class="form-control" *ngIf="payhead" >
-       <option value="c.value" *ngFor="let c of addOrDeductsOption">
+       <option value={{c.value}} *ngFor="let c of addOrDeductsOption">
          {{c.name}}
       </option>
      </select>
@@ -100,13 +100,13 @@
    <div class="form-group" >
      <label for="">Under:</label>
      <select [(ngModel)]="newpayheadInfo.under" name="newpayheadInfo.under" class="form-control" *ngIf="!payhead" >
-       <option value="c.value" *ngFor="let c of expenseOption">
+       <option value={{c.value}} *ngFor="let c of expenseOption">
          {{c.name}}
       </option>
      </select>
       
       <select [(ngModel)]="payhead.under" name="payhead.under" class="form-control" *ngIf="payhead" >
-       <option value="c.value" *ngFor="let c of expenseOption">
+       <option value={{c.value}} *ngFor="let c of expenseOption">
          {{c.name}}
       </option>
      </select>

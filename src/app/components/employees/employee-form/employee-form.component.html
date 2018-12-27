@@ -68,7 +68,7 @@
   </div>
 <div class="form-group">
  <label for="">Designation</label>
- <select [(ngModel)]="employee.designation" name="employee.designation"  *ngIf="employee" class="form-control">
+ <select [(ngModel)]="employee.designation.id" name="employee.designation"  *ngIf="employee" class="form-control">
   <option *ngFor="let d of designations" value={{d.id}}>{{d.name}}</option>
  </select>
  <select [(ngModel)]="newEmployeeInfo.designation" name="newEmployeeInfo.designation"  *ngIf="!employee" class="form-control">
@@ -77,7 +77,7 @@
 </div>
 <div class="form-group">
  <label for="">Package</label>
- <select [(ngModel)]="employee.peckage" name="employee.peckage"  *ngIf="employee" class="form-control">
+ <select [(ngModel)]="employee.peckage.id" name="employee.peckage"  *ngIf="employee" class="form-control">
   <option *ngFor="let d of packages" value={{d.id}}>{{d.name}}</option>
  </select>
  <select [(ngModel)]="newEmployeeInfo.peckage" name="newEmployeeInfo.peckage"  *ngIf="!employee" class="form-control">
