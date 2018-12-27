@@ -1,0 +1,16 @@
+
+<div class="container employee-detail-view" *ngIf="salarydetail">
+  <div class="name"> 
+   {{salarydetail.employee}}
+  </div>
+  <div class="address">
+    {{salarydetail.effective_from}}
+  </div>
+  <div class="date-of-joining">
+     {{salarydetail.effective_till_date}}    
+  </div>
+</div>
+<button class="btn btn-default" (click)="edit()">Edit </button>
+<div [@popOverState]="stateName">
+<app-salarydetail-form (messageEvent)="receiveMessage($event)" [salarydetail]="salarydetail"></app-salarydetail-form>
+</div>

@@ -1,0 +1,25 @@
+<button class="btn btn-default" (click)="addNewsalarydetail()">Add new employee</button>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Employee Name</th>
+      <th scope="col">Effective from</th>
+      <th scope="col">Effictive till date</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+    <tr *ngFor="let salary of salarydetails; index as i" (click)="seeDetailView(salary)">
+      <th scope="row">{{i+1}}</th>
+      <td>{{salary.employee}}</td>
+      <td>{{salary.effective_from}}</td>
+      <td>{{salary.effective_till_date}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+<div [@popOverState]="stateName">
+ <app-salarydetail-form (messageEvent)="receiveMessage($event)"></app-salarydetail-form>
+</div>
