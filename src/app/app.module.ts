@@ -30,7 +30,10 @@ import { PayheadFormComponent } from './components/payhead/payhead-form/payhead-
 import { PayheadDetailComponent } from './components/payhead/payhead-detail/payhead-detail.component';
 import { SalarydetailComponent } from './components/salarydetail/salarydetail.component';
 import { SalarydetailFormComponent } from './components/salarydetail/salarydetail-form/salarydetail-form.component';
-import { SalarydetailDetailComponent } from './components/salarydetail/salarydetail-detail/salarydetail-detail.component'
+import { SalarydetailDetailComponent } from './components/salarydetail/salarydetail-detail/salarydetail-detail.component';
+import { SalarydetailitemsComponent } from './components/salarydetailitems/salarydetailitems.component';
+import { SalarydetailitemsFormComponent } from './components/salarydetailitems/salarydetailitems-form/salarydetailitems-form.component';
+import { SalarydetailitemsDetailComponent } from './components/salarydetailitems/salarydetailitems-detail/salarydetailitems-detail.component'
 
 
 const appRoutes:Routes=[
@@ -84,6 +87,12 @@ const appRoutes:Routes=[
   },
   {
     path:'salarydetails/:id', component: SalarydetailDetailComponent
+  },
+  {
+    path:'salarydetailitems', component: SalarydetailitemsComponent
+  },
+  {
+    path:'salarydetailitems/:id', component: SalarydetailitemsDetailComponent
   }
 ];
 @NgModule({
@@ -114,7 +123,10 @@ const appRoutes:Routes=[
     PayheadDetailComponent,
     SalarydetailComponent,
     SalarydetailFormComponent,
-    SalarydetailDetailComponent
+    SalarydetailDetailComponent,
+    SalarydetailitemsComponent,
+    SalarydetailitemsFormComponent,
+    SalarydetailitemsDetailComponent
 
   ],
   imports: [
