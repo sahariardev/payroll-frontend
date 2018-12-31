@@ -1,0 +1,25 @@
+
+ <button class="btn btn-default" (click)="addNew()">Add new computationInfo</button>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Symbol</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      
+      <tr *ngFor="let computationInfo of computationInfos; index as i" (click)="seeDetailView(computationInfo)">
+        <th scope="row">{{i+1}}</th>
+        <td>{{computationInfo.name}}</td>
+        <td>{{computationInfo.symbol}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+<div [@popOverState]="stateName">  
+<app-computation-info-form (messageEvent)="receiveMessage($event)"></app-computation-info-form>
+</div>

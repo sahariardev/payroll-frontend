@@ -38,6 +38,7 @@ export class SalarydetailitemsFormComponent implements OnInit {
     this.http.get(url).subscribe((response)=>{
       this.salarydetails=response;
       console.log(response);
+      console.log("areee ")
     })
     this.http.get(payhead).subscribe((response)=>{
       this.payheads=response;

@@ -14,9 +14,11 @@ export class SalarydetailFormComponent implements OnInit {
   @Input() salarydetail:any;  
   @Output() messageEvent=new EventEmitter<boolean>();
    newsalarydetailInfo={
-    employee:'',
+
     effective_from:'',
     effective_till_date:'',
+    name:'',
+    employee:''
     
   }
   endpoint:string;
@@ -54,9 +56,16 @@ export class SalarydetailFormComponent implements OnInit {
        let puttRequestUrl=this.endpoint+"/api/salarydetails/"+this.salarydetail.id+"/edit/";
        console.log(this.salarydetail);
        console.log("---Ending---");
-       this.http.put(puttRequestUrl,this.salarydetail).subscribe((response)=>{
-         console.log(response);
-         console.log("---finish---");
+       let data={
+
+         id:this.salarydetail.id,
+         effective_till_date:this.salarydetail.effective_till_date,
+         effective_from:this.salarydetail.effective_from,
+       }
+
+       this.http.put(puttRequestUrl,data).subscribe((response)=>{
+            this.sendMessageToParent(true);
+
        });
 
     }

@@ -1,16 +1,18 @@
 <div class="modal-wrapper">
   <div class="modal-contain">
      <div class="container">
-
-    <div class="form-group">
-      <label for="exampleInputEmail1">Employee</label>
-      <select class="form-control" [(ngModel)]="newsalarydetailInfo.employee" name="newsalarydetailInfo.employee" *ngIf="!salarydetail">
-      <option *ngFor="let g of employees" value={{g.id}}> {{g.name}} </option>
-      </select>
-      <select class="form-control" [(ngModel)]="salarydetail.employee" name="salarydetail.employee" *ngIf="salarydetail">
-      <option *ngFor="let g of employees" value={{g.id}}> {{g.name}} </option>
-      </select>
+     
+     <div class="form-group" *ngIf="!salarydetail">
+      <label for="exampleInputEmail1">Salary detail name</label>
+      <input type="text" class="form-control"  [(ngModel)]="newsalarydetailInfo.name" name="newsalarydetailInfo.name"  placeholder="effective date">
     </div>
+     <div class="form-group" *ngIf="!salarydetail">
+       <label for="exampleInputEmail1">Employee</label>
+       <select class="form-control" [(ngModel)]="newsalarydetailInfo.employee" name="newsalarydetailInfo.employee" *ngIf="!salarydetail">
+       <option *ngFor="let g of employees" value={{g.id}}> {{g.name}} </option>
+       </select>
+     </div>
+   
     <div class="form-group">
       <label for="exampleInputEmail1">Effective From</label>
       

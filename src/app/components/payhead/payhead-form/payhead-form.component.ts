@@ -22,7 +22,8 @@ export class PayheadFormComponent implements OnInit {
      "pay_head_type":'',
      "attendence_production_type":'',
      "add_or_deduct":'',
-     "under":''
+     "under":'',
+     "rate":null
    }
    units:any;
    payheadtype:any;
@@ -66,11 +67,11 @@ export class PayheadFormComponent implements OnInit {
          value:'On Production'
        },
        {
-         name:'As Computed Value',
+         name:'Computed Value',
          value:'As Computed Value'
        },
        {
-         name:'As Custom Value',
+         name:'Custom Value',
          value:'As Custom Value'
        },
      ]

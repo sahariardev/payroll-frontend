@@ -50,8 +50,22 @@
       </option>
      </select>
    </div>
-  
-  
+   <div class="form-group" *ngIf="!payhead && newpayheadInfo.calculation_type == 'Flat Rate' ">
+    <label for="exampleInputEmail1">Rate</label>
+    <input type="text" class="form-control"  [(ngModel)]="newpayheadInfo.rate" name="newpayheadInfo.rate" *ngIf="!payhead" placeholder="name">
+  </div>
+  <div class="form-group" *ngIf="payhead && newpayheadInfo.calculation_type == 'Flat Rate' ">
+    <label for="exampleInputEmail1">Rate</label>
+    <input type="text" class="form-control"  [(ngModel)]="payhead.rate" name="payhead.rate" *ngIf="payhead"  placeholder="name">
+  </div>
+  <div class="form-group" *ngIf="!payhead && newpayheadInfo.calculation_type == 'As Computed Value' ">
+    <label for="exampleInputEmail1">Rule</label>
+    <input type="text" class="form-control"  [(ngModel)]="newpayheadInfo.rule" name="newpayheadInfo.rule" *ngIf="!payhead" placeholder="Rule">
+  </div>
+  <div class="form-group" *ngIf="payhead && newpayheadInfo.calculation_type == 'As Computed Value' ">
+    <label for="exampleInputEmail1">Rule</label>
+    <input type="text" class="form-control"  [(ngModel)]="payhead.rule" name="payhead.rule" *ngIf="payhead"  placeholder="Rule">
+  </div>
   <div class="form-group" >
      <label for="">Calculation period</label>
      <select [(ngModel)]="newpayheadInfo.calculation_period"  name="newpayheadInfo.calculation_period" class="form-control" *ngIf="!payhead" >
