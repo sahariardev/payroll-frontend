@@ -48,6 +48,10 @@ export class SidebarComponent implements OnInit {
      {
        name:'Salary Detail Item',
        link: '/salarydetailitems'
+     },
+     {
+       name: 'Attendance',
+       link: '/attendances'
      }
     ]
   constructor() { }
