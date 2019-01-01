@@ -17,9 +17,9 @@ export class SalarydetailitemsFormComponent implements OnInit {
     salary_detail:'',
     priority:'',
     pay_head:'',
-    value:'',
-    rate:'',
-    unit:''
+    value:null,
+    rate:null,
+    unit:null
   }
   endpoint:string;
   salarydetails:any;
@@ -58,7 +58,8 @@ export class SalarydetailitemsFormComponent implements OnInit {
       //create a post request
       let postRequestUrl=this.endpoint+"/api/salarydetailitems/create/";
       console.log(this.newsalarydetailitemInfo);
-
+      let payhead:any=this.newsalarydetailitemInfo.pay_head;
+      this.newsalarydetailitemInfo.pay_head=payhead.id; 
       this.http.post(postRequestUrl,this.newsalarydetailitemInfo).subscribe((response)=>{
         console.log(response);  
         this.sendMessageToParent(true);  

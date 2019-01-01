@@ -4,11 +4,8 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">salary detail</th>
-      <th scope="col">priority</th>
       <th scope="col">Pay Head</th>
-      <th scope="col">Value</th>
-      <th scope="col">Rate</th>
-      <th scope="col">Unit</th>
+
     </tr>
   </thead>
   <tbody>
@@ -17,11 +14,8 @@
     <tr *ngFor="let salarydetailitem of salarydetailitems; index as i" (click)="seeDetailView(salarydetailitem)">
       <th scope="row">{{i+1}}</th>
       <td>{{salarydetailitem.salary_detail}}</td>
-      <td>{{salarydetailitem.priority}}</td>
       <td>{{salarydetailitem.pay_head}}</td>
-      <td>{{salarydetailitem.value}}</td>
-      <td>{{salarydetailitem.rate}}</td>
-      <td>{{salarydetailitem.unit}}</td>
+
     </tr>
     
   </tbody>

@@ -5,40 +5,39 @@
       <div class="form-group">
         <label for="exampleInputEmail1">Salary details</label>
         <select class="form-control" [(ngModel)]="newsalarydetailitemInfo.salary_detail" name="newsalarydetailitemInfo.salary_detail" *ngIf="!salarydetailitem">
-          <option *ngFor="let g of salarydetails" value={{g.id}}> {{g.id}} </option>
+          <option *ngFor="let g of salarydetails" value={{g.id}}> {{g.name}} </option>
         </select>
-        <select class="form-control" [(ngModel)]="newsalarydetailitemInfo.salary_detail" name="newsalarydetailitemInfo.salary_detail" *ngIf="salarydetailitem">
-          <option *ngFor="let g of salarydetails" value={{g.value}}> {{g.name}} </option>
+        <select class="form-control" [(ngModel)]="salarydetailitem.salary_detail" name="salarydetailitem.salary_detail" *ngIf="salarydetailitem">
+          <option *ngFor="let g of salarydetails" value={{g.id}}> {{g.name}} </option>
         </select>
       </div>    
-  
       <div class="form-group">
-        <label for="exampleInputEmail1">salarydetailitem name</label>
-        <input type="number" class="form-control"  [(ngModel)]="salarydetailitem.priority" name="salarydetailitem.priority" *ngIf="salarydetailitem"  placeholder="name">
-        <input type="number" class="form-control"  [(ngModel)]="newsalarydetailitemInfo.priority" name="newsalarydetailitemInfo.priority" *ngIf="!salarydetailitem" placeholder="name">
-      </div>
-
-      <div class="form-group">
-        <label for="exampleInputEmail1">Gender</label>
+        <label for="exampleInputEmail1">PayHead</label>
         <select class="form-control" [(ngModel)]="newsalarydetailitemInfo.pay_head" name="newsalarydetailitemInfo.pay_head" *ngIf="!salarydetailitem">
-          <option *ngFor="let g of payheads" value={{g.id}}> {{g.name}} </option>
+          <option *ngFor="let g of payheads" [ngValue]="g"> {{g.name}} </option>
         </select>
-        <select class="form-control" [(ngModel)]="newsalarydetailitemInfo.pay_head" name="newsalarydetailitemInfo.pay_head" *ngIf="salarydetailitem">
-          <option *ngFor="let g of payheads" value={{g.id}}> {{g.name}} </option>
+        <select class="form-control" [(ngModel)]="calculation_type.pay_head" name="calculation_type.pay_head" *ngIf="salarydetailitem">
+          <option *ngFor="let g of payheads" value={{g}}> {{g.name}} </option>
         </select>
       </div> 
-
       <div class="form-group">
-        <label for="exampleInputEmail1">salarydetailitem name</label>
-        <input type="number" class="form-control"  [(ngModel)]="salarydetailitem.value" name="salarydetailitem.value" *ngIf="salarydetailitem"  placeholder="name">
-        <input type="number" class="form-control"  [(ngModel)]="newsalarydetailitemInfo.value" name="newsalarydetailitemInfo.value" *ngIf="!salarydetailitem" placeholder="name">
+        <label for="exampleInputEmail1">Priority</label>
+        <input type="number" class="form-control"  [(ngModel)]="salarydetailitem.priority" name="salarydetailitem.priority" *ngIf="salarydetailitem"  >
+        <input type="number" class="form-control"  [(ngModel)]="newsalarydetailitemInfo.priority" name="newsalarydetailitemInfo.priority" *ngIf="!salarydetailitem" >
       </div>
-
+      <div *ngIf="newsalarydetailitemInfo.pay_head && newsalarydetailitemInfo.pay_head.calculation_type != 'Flat Rate' &&  newsalarydetailitemInfo.pay_head.calculation_type != 'As Computed Value' ">
+      <div class="form-group" >
+        <label for="exampleInputEmail1">Value</label>
+        <input type="number" class="form-control"  [(ngModel)]="salarydetailitem.value" name="salarydetailitem.value" *ngIf="salarydetailitem"   >
+        <input type="number" class="form-control"  [(ngModel)]="newsalarydetailitemInfo.value" name="newsalarydetailitemInfo.value" *ngIf="!salarydetailitem"  >
+      </div>
+    
       <div class="form-group">
-        <label for="exampleInputEmail1">salarydetailitem name</label>
-        <input type="number" class="form-control"  [(ngModel)]="salarydetailitem.rate" name="salarydetailitem.rate" *ngIf="salarydetailitem"  placeholder="name">
-        <input type="number" class="form-control"  [(ngModel)]="newsalarydetailitemInfo.rate" name="newsalarydetailitemInfo.rate" *ngIf="!salarydetailitem" placeholder="name">
+        <label for="exampleInputEmail1">Rate</label>
+        <input type="number" class="form-control"  [(ngModel)]="salarydetailitem.rate" name="salarydetailitem.rate" *ngIf="salarydetailitem"  >
+        <input type="number" class="form-control"  [(ngModel)]="newsalarydetailitemInfo.rate" name="newsalarydetailitemInfo.rate" *ngIf="!salarydetailitem" >
       </div>
+      
 
       <div class="form-group">
         <label for="exampleInputEmail1">Units</label>
@@ -49,7 +48,7 @@
           <option *ngFor="let g of units" value={{g.id}}> {{g.name}} </option>
         </select>
       </div>
-
+      </div> 
       <button  class="btn btn-primary" (click)="submit()">Submit</button>
       <button  class="btn btn-primary" style="margin-left:20px;" (click)="cancel()">Cancel</button>
 

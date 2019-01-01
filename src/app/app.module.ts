@@ -36,7 +36,10 @@ import { SalarydetailitemsFormComponent } from './components/salarydetailitems/s
 import { SalarydetailitemsDetailComponent } from './components/salarydetailitems/salarydetailitems-detail/salarydetailitems-detail.component';
 import { ComputationInfosComponent } from './components/computation-infos/computation-infos.component';
 import { ComputationInfoFormComponent } from './components/computation-infos/computation-info-form/computation-info-form.component';
-import { ComputationInfoDetailComponent } from './components/computation-infos/computation-info-detail/computation-info-detail.component'
+import { ComputationInfoDetailComponent } from './components/computation-infos/computation-info-detail/computation-info-detail.component';
+import { AttendaceComponent } from './components/attendace/attendace.component';
+import { AttendanceFormComponent } from './components/attendace/attendance-form/attendance-form.component';
+import { AttendanceDetailComponent } from './components/attendace/attendance-detail/attendance-detail.component'
 
 
 const appRoutes:Routes=[
@@ -132,7 +135,10 @@ const appRoutes:Routes=[
     SalarydetailitemsDetailComponent,
     ComputationInfosComponent,
     ComputationInfoFormComponent,
-    ComputationInfoDetailComponent
+    ComputationInfoDetailComponent,
+    AttendaceComponent,
+    AttendanceFormComponent,
+    AttendanceDetailComponent
 
   ],
   imports: [
