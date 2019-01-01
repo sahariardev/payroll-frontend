@@ -29,19 +29,19 @@ export class AttendaceComponent implements OnInit {
 
   constructor(public  http:HttpClient,public router:Router) { }
   host:string;
-  Attendances:any;
+  attendances:any;
   show=false;
   ngOnInit() {
-    this.host=getHost()+"/api/Attendances";
+    this.host=getHost()+"/api/attendances";
     console.log(this.host);
-    this. getAllAttendances();
+    this.getAllAttendances();
   }
 
   getAllAttendances()
   {
     this.http.get(this.host).subscribe((response)=>{
-       this.Attendances=response;
-       console.log(this.Attendances);
+       this.attendances=response;
+       console.log(this.attendances);
     });
   }
 
@@ -60,7 +60,7 @@ export class AttendaceComponent implements OnInit {
   }
   seeDetailView(attendance)
   {
-    this.router.navigate(['/Attendances',attendance.id]);
+    this.router.navigate(['/attendances',attendance.id]);
   }  
 
 }
