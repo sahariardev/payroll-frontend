@@ -1,37 +1,74 @@
 .main-sidebar
 {
     width: 300px;
-    background-color: #f1424d;
+    background-color: #2A3F54;
     height: 100%;
     position: fixed;
 }
 .main-sidebar .title
 {
-    color: white;
-    font-size:25px;
+    color: #ffffff;
+    font-size:16px;
     text-align: center;
-    font-family: 'Roboto Mono', monospace;
     padding: 15px;
-    border-bottom:3px solid white;  
+    border-bottom:3px solid #ffffff;  
 }
-.main-sidebar .menu-container 
-{
-  margin: 30px 20px;
-  color: white;
-  font-family: 'Roboto Mono', monospace;
- 
-
+.menu_section {
+    margin-bottom: 35px
 }
-.main-sidebar .menu-container .menu-item
-{
-    padding: 10px 20px;
+.menu_section h3 {
+    padding-left: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-weight: bold;
+    font-size: 11px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-shadow: 1px 1px #000
+}
+.menu_section>ul {
+    margin-top: 10px;
+}
+.menu_section>ul>li {
+    width: 100%;
+}
+.nav.side-menu>li {
+    position: relative;
+    display: block;
     cursor: pointer;
+    padding: 10px 10px 10px 30px;
 }
-.main-sidebar .menu-container .menu-item:hover
-{
-    background-color:#ff6464;
+.nav li:before {
+    background: #425668;
+    bottom: auto;
+    content: "";
+    height: 8px;
+    left: 15px;
+    margin-top: 8px;
+    position: absolute;
+    right: auto;
+    width: 8px;
+    z-index: 1;
+    border-radius: 50%
 }
-.main-sidebar a
-{
-    color: white;
+.nav li:after {
+    border-left: 1px solid #425668;
+    bottom: 0;
+    content: "";
+    left: 19px;
+    position: absolute;
+    top: 0
+}
+.nav.side-menu li.active, .nav.side-menu li:hover {
+    background-color: rgba(255,255,255,.06);
+}
+.nav.side-menu>li>a {
+    color: #ffffff;
+}
+.nav.side-menu>li>a:hover,
+.nav>li>a:focus {
+    text-decoration: none;
+    background: transparent;
+    color: rgba(255,255,255,.75);
 }
