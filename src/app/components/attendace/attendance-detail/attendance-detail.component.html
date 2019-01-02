@@ -1,22 +1,22 @@
 
-<div class="container employee-detail-view" *ngIf="attendance">
+<div class="employee-detail-view" *ngIf="attendance">
     <div class="name"> 
-     {{attendance.employee}}
+     Employee: {{attendance.employee}}
     </div>
     <div class="address">
-      {{attendance.production_attendance_type}}
+      Production Attendance Type: {{attendance.production_attendance_type}}
     </div>
     <div class="date-of-joining">
-       {{attendance.value}}    
+      Value: {{attendance.value}}    
     </div>
     <div>
-      {{attendance.unit}}
+      Unit: {{attendance.unit}}
     </div>
     <div>
-        {{attendance.date}}
-      </div>
+      Date: {{attendance.date}}
+    </div>
   </div>
-  <button class="btn btn-edit" (click)="edit()">Edit </button>
+  <button class="btn btn-edit" (click)="edit()"> Edit </button>
   <div [@popOverState]="stateName">
   <app-attendance-form (messageEvent)="receiveMessage($event)" [attendance]="attendance"></app-attendance-form>
   </div>
