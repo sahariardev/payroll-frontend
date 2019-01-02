@@ -21,10 +21,10 @@
       
       <tr *ngFor="let attendance of attendances; index as i" (click)="seeDetailView(attendance)">
         <th scope="row">{{i+1}}</th>
-        <td>{{attendance.employee}}</td>
-        <td>{{attendance.production_attendance_type}}</td>
+        <td>{{attendance.employee.name}}</td>
+        <td>{{attendance.production_attendance_type.name}}</td>
         <td>{{attendance.value}}</td>
-        <td>{{attendance.unit}}</td>
+        <td>{{attendance.unit.name}}</td>
         <td>{{attendance.date}}</td>
       </tr>
       

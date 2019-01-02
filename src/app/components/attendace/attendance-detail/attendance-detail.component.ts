@@ -28,7 +28,7 @@ import {trigger,state,style,animate,transition} from '@angular/animations';
 export class AttendanceDetailComponent implements OnInit {
 
   id:number;
-  endpoint=getHost()+"/api/attendances";
+  endpoint=getHost()+"/api/attendances/";
   attendance:any;
   show:boolean;
   
@@ -40,24 +40,36 @@ export class AttendanceDetailComponent implements OnInit {
    }
   
    ngOnInit() {
-    this.id= parseInt(this.route.snapshot.paramMap.get('id'));
-    console.log(this.id);
-    let url=this.endpoint+"/"+this.id;
+    this.endpoint=getHost()+"/api/attendances/";
+    //catching the id from the url
+    this.id=parseInt(this.route.snapshot.paramMap.get('id'));
+    this.loadData(); 
+    
+  }
+  loadData()
+  {
+     //fethcing the data using the id
+    let url=this.endpoint+""+this.id;
     this.http.get(url).subscribe((response)=>{
-      this.attendance=response; 
+      this.attendance=response;
     });
-  
   }
-  get stateName(){
-    return this.show ? 'show' : 'hide'  
-  }
+  //receving message from child component
   receiveMessage($event)
   {
-      this.show=false; 
+
+      this.show=false;
+      
   }
+  //while click on edit button show the form
   edit()
   {
-     this.show=true;  
+     this.show=true;
+  }
+  
+  //animation related methods amd properties
+   get stateName(){
+    return this.show ? 'show' : 'hide'  
   }
 
 }
