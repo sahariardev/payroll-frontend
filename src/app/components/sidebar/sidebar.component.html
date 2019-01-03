@@ -1,19 +1,16 @@
-<div class="row">
-  <div class="col-md-3 main-sidebar">
-    <div class="navbar">
-        <div class="main_menu_side hidden-print main_menu">
-          <div class="title">
-              {{title}}
-          </div>
-          <div class="menu_section">
-            <ul class="nav side-menu">
-              <li *ngFor="let item of menuItems"><a class="" href="#" routerLink={{item.link}}>{{item.name}}</a>
-              </li>
-            </ul>
-          </div>
+  <div class="main-sidebar">
+    <div class="navbar main_menu">
+        <div class="title">
+            <h3>{{title}}</h3>
+        </div>
+        <div class="menu_section">
+          <ul class="nav side-menu">
+            <li *ngFor="let item of menuItems"><a class="" href="#" routerLink={{item.link}}>{{item.name}}</a>
+            </li>
+          </ul>
         </div>
     </div> 
   </div>
-</div>
+
 
 

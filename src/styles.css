@@ -2,12 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-.content
-{
-    margin-left: 300px;
-    padding: 30px;
-    
-}
 .modal-wrapper
 {
     position: fixed;
@@ -25,4 +19,15 @@
     max-width: 500px;
     background: white;
     padding: 30px;
+}
+.btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.btn-edit{
+    background: #26B99A !important;
+    border: 1px solid #169F85 !important;
+}
+.btn-edit:hover{
+    background: #169F85 !important;
 }

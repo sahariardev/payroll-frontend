@@ -99,6 +99,12 @@ const appRoutes:Routes=[
   },
   {
     path:'salarydetailitems/:id', component: SalarydetailitemsDetailComponent
+  },
+  {
+    path:'attendances', component: AttendaceComponent
+  },
+  {
+    path:'attendances/:id', component: AttendanceDetailComponent
   }
 ];
 @NgModule({

@@ -1,3 +1,21 @@
-<p>
-  attendance-detail works!
-</p>
+<div class="employee-detail-view" *ngIf="attendance">
+    <div class="name"> 
+     Employee: {{attendance.employee}}
+    </div>
+    <div class="address">
+      Production Attendance Type: {{attendance.production_attendance_type}}
+    </div>
+    <div class="date-of-joining">
+      Value: {{attendance.value}}    
+    </div>
+    <div>
+      Unit: {{attendance.unit}}
+    </div>
+    <div>
+      Date: {{attendance.date}}
+    </div>
+  </div>
+  <button class="btn btn-edit" (click)="edit()"> Edit </button>
+  <div [@popOverState]="stateName">
+  <app-attendance-form (messageEvent)="receiveMessage($event)" [attendance]="attendance"></app-attendance-form>
+  </div>
