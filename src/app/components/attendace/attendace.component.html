@@ -3,17 +3,16 @@
     <h2>Attendance List</h2>
   </div>
 </div>
-<div class="row">
+
   <button class="btn btn-primary" (click)="addNew()">Add new Attendance</button>
   <table class="table table-bordered">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Employee Name</th>
-        <th scope="col">Production Attendance Type</th>
+        <th scope="col">Employee</th>
+        <th scope="col">Attendance Type</th>
         <th scope="col">Value</th>
         <th scope="col">Unit</th>
-        <th scope="col">Date</th>
       </tr>
     </thead>
     <tbody>
@@ -25,12 +24,11 @@
         <td>{{attendance.production_attendance_type.name}}</td>
         <td>{{attendance.value}}</td>
         <td>{{attendance.unit.name}}</td>
-        <td>{{attendance.date}}</td>
       </tr>
       
     </tbody>
   </table>
-</div>
+
 
 <div [@popOverState]="stateName">  
 <app-attendance-form (messageEvent)="receiveMessage($event)"></app-attendance-form>
