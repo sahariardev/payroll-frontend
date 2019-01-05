@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+
+body{
+    color: #73879C;
+    background: #2A3F54;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.471;
+}
 .modal-wrapper
 {
     position: fixed;
