@@ -28,7 +28,7 @@ import {trigger,state,style,animate,transition} from '@angular/animations';
 export class AttendanceDetailComponent implements OnInit {
 
   id:number;
-  endpoint=getHost()+"/api/attendances/";
+  endpoint:string;
   attendance:any;
   show:boolean;
   

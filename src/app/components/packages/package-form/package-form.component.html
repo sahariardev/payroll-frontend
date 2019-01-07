@@ -3,38 +3,38 @@
      <div class="container">
     
   <div class="form-group">
-    <label for="exampleInputEmail1">Package name</label>
+    <label for="Package Name">Package name</label>
     
-    <input type="text" class="form-control"  [(ngModel)]="package.name" name="package.name" *ngIf="package"  placeholder="name">
-    <input type="text" class="form-control"  [(ngModel)]="newPackageInfo.name" name="newPackageInfo.name" *ngIf="!package" placeholder="name">
+    <input type="text" class="form-control"  [(ngModel)]="package.name" name="package.name" *ngIf="package"  placeholder="Package Name">
+    <input type="text" class="form-control"  [(ngModel)]="newPackageInfo.name" name="newPackageInfo.name" *ngIf="!package" placeholder="Package Name">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Salary</label>
-    <input type="text" class="form-control"  [(ngModel)]="package.salary" name="package.salary" *ngIf="package"  placeholder="salary">
-    <input type="text" class="form-control"   [(ngModel)]="newPackageInfo.salary" name="newPackageInfo.salary" *ngIf="!package" >
+    <input type="number" class="form-control"  [(ngModel)]="package.salary" name="package.salary" *ngIf="package"  placeholder="Salary">
+    <input type="number" class="form-control"   [(ngModel)]="newPackageInfo.salary" name="newPackageInfo.salary" *ngIf="!package" placeholder="Salary">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Annual leave</label>
-    <input type="text" class="form-control"  [(ngModel)]="package.annual_leave" name="package.annual_leave" *ngIf="package"  placeholder="">
-    <input type="text" class="form-control"   [(ngModel)]="newPackageInfo.annual_leave" name="newPackageInfo.annual_leave" *ngIf="!package" placeholder="">
+    <input type="text" class="form-control"  [(ngModel)]="package.annual_leave" name="package.annual_leave" *ngIf="package"  placeholder="Annual Leave">
+    <input type="text" class="form-control"   [(ngModel)]="newPackageInfo.annual_leave" name="newPackageInfo.annual_leave" *ngIf="!package" placeholder="Annual Leave">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Sick leave</label>
-    <input type="text" class="form-control"  [(ngModel)]="package.sick_leave" name="package.sick_leave" *ngIf="package"  placeholder="salarye">
-    <input type="text" class="form-control"   [(ngModel)]="newPackageInfo.sick_leave" name="newPackageInfo.sick_leave" *ngIf="!package" placeholder="Address">
+    <input type="text" class="form-control"  [(ngModel)]="package.sick_leave" name="package.sick_leave" *ngIf="package"  placeholder="Sick leave">
+    <input type="text" class="form-control"   [(ngModel)]="newPackageInfo.sick_leave" name="newPackageInfo.sick_leave" *ngIf="!package" placeholder="Sick leave">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Extra</label>
-    <input type="text" class="form-control"  [(ngModel)]="package.extra" name="package.extra" *ngIf="package"  placeholder="extra">
-    <input type="text" class="form-control"   [(ngModel)]="newPackageInfo.extra" name="newPackageInfo.extra" *ngIf="!package">
+    <input type="text" class="form-control"  [(ngModel)]="package.extra" name="package.extra" *ngIf="package"  placeholder="Extra">
+    <input type="text" class="form-control"   [(ngModel)]="newPackageInfo.extra" name="newPackageInfo.extra" *ngIf="!package" placeholder="Extra">
   </div>
    <div class="form-group">
     <label for="exampleInputEmail1">Description</label>
     <input type="text" class="form-control"  [(ngModel)]="package.description" name="package.description" *ngIf="package"  placeholder="Description">
     <input type="text" class="form-control"  [(ngModel)]="newPackageInfo.description" name="newPackageInfo.description" *ngIf="!package" placeholder="Description">
   </div>
-  <button  class="btn btn-primary" (click)="submit()">Submit</button>
-
+  <button  class="btn btn-success" (click)="submit()">Submit</button>
+  <button  class="btn btn-danger" style="margin-left:20px;" (click)="cancel()">Cancel</button>
 </div>     
   </div>
 </div>

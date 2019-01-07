@@ -1,26 +1,26 @@
 
 <div class="container employee-detail-view" *ngIf="salarydetailitem">
-  <div class="name"> 
+  <div> 
    {{salarydetailitem.salary_detail}}
   </div>
-  <div class="address">
+  <div>
     {{salarydetailitem.priority}}
   </div>
-  <div class="date-of-joining">
+  <div>
      {{salarydetailitem.pay_head}}    
   </div>
-  <div class="gender">
+  <div>
     {{salarydetailitem.value}}
   </div>
-  <div class="date-of-birth">
+  <div>
     {{salarydetailitem.rate}}
   </div>
-  <div class="blood-group">
+  <div>
     {{salarydetailitem.unit}}
   </div>
   
 </div>
-<button class="btn btn-default" (click)="edit()">Edit </button>
+<button class="btn btn-edit" (click)="edit()">Edit </button>
 <div [@popOverState]="stateName">
 <app-salarydetailitems-form (messageEvent)="receiveMessage($event)" [salarydetailitem]="salarydetailitem"></app-salarydetailitems-form>
 </div>

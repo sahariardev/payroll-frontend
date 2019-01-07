@@ -13,7 +13,7 @@
     {{salarydetail.name}}
   </div>
 </div>
-<button class="btn btn-default" (click)="edit()">Edit </button>
+<button class="btn btn-edit" (click)="edit()"> Edit </button>
 <div [@popOverState]="stateName">
 <app-salarydetail-form (messageEvent)="receiveMessage($event)" [salarydetail]="salarydetail"></app-salarydetail-form>
 </div>

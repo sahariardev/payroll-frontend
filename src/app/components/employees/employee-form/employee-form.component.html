@@ -1,50 +1,48 @@
-
-
 <div class="modal-wrapper">
   <div class="modal-contain">
      <div class="container">
     
   <div class="form-group">
-    <label for="exampleInputEmail1">Employee name</label>
+    <label for="name">Employee name</label>
     
-    <input type="text" class="form-control"  [(ngModel)]="employee.name" name="employee.name" *ngIf="employee"  placeholder="name">
-    <input type="text" class="form-control"  [(ngModel)]="newEmployeeInfo.name" name="newEmployeeInfo.name" *ngIf="!employee" placeholder="name">
+    <input type="text" class="form-control"  [(ngModel)]="employee.name" name="employee.name" *ngIf="employee"  placeholder="Name">
+    <input type="text" class="form-control"  [(ngModel)]="newEmployeeInfo.name" name="newEmployeeInfo.name" *ngIf="!employee" placeholder="Name">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Employee Address</label>
+    <label for="address">Employee Address</label>
     
     <input type="text" class="form-control"  [(ngModel)]="employee.address" name="employee.name" *ngIf="employee"  placeholder="Address">
     <input type="text" class="form-control"   [(ngModel)]="newEmployeeInfo.address" name="newEmployeeInfo.address" *ngIf="!employee" placeholder="Address">
   </div>
    <div class="form-group">
-    <label for="exampleInputEmail1">Email Address</label>
+    <label for="email">Email Address</label>
     
-    <input type="text" class="form-control"  [(ngModel)]="employee.email" name="employee.email" *ngIf="employee"  placeholder="Email">
-    <input type="text" class="form-control"  [(ngModel)]="newEmployeeInfo.email" name="newEmployeeInfo.email" *ngIf="!employee" placeholder="Email">
+    <input type="email" class="form-control"  [(ngModel)]="employee.email" name="employee.email" *ngIf="employee"  placeholder="Email">
+    <input type="email" class="form-control"  [(ngModel)]="newEmployeeInfo.email" name="newEmployeeInfo.email" *ngIf="!employee" placeholder="Email">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Contact</label>
+    <label for="contact">Contact</label>
     
-    <input type="text" class="form-control"  [(ngModel)]="employee.contact" name="employee.contact" *ngIf="employee"  placeholder="contact number">
-    <input type="text" class="form-control"   [(ngModel)]="newEmployeeInfo.contact" name="newEmployeeInfo.contact" *ngIf="!employee" placeholder="contact number">
+    <input type="tel" class="form-control"  [(ngModel)]="employee.contact" name="employee.contact" *ngIf="employee"  placeholder="Contact Number">
+    <input type="tel" class="form-control"   [(ngModel)]="newEmployeeInfo.contact" name="newEmployeeInfo.contact" *ngIf="!employee" placeholder="Contact Number">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Blood Group</label>
+    <label for="blood group">Blood Group</label>
     <input type="text" class="form-control"  [(ngModel)]="employee.blood_group" name="employee.blood_group" *ngIf="employee"  placeholder="Blood group">
     <input type="text" class="form-control"   [(ngModel)]="newEmployeeInfo.blood_group" name="newEmployeeInfo.blood_group" *ngIf="!employee" placeholder="Blood group">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Date of birth</label>
-    <input type="date" class="form-control"  [(ngModel)]="employee.date_of_birth" name="employee.date_of_birth" *ngIf="employee"  placeholder="Blood group">
-    <input type="date" class="form-control"   [(ngModel)]="newEmployeeInfo.date_of_birth" name="newEmployeeInfo.date_of_birth" *ngIf="!employee" placeholder="Blood group">
+    <label for="date of birth">Date of birth</label>
+    <input type="date" class="form-control"  [(ngModel)]="employee.date_of_birth" name="employee.date_of_birth" *ngIf="employee"  placeholder="Date of Birth">
+    <input type="date" class="form-control"   [(ngModel)]="newEmployeeInfo.date_of_birth" name="newEmployeeInfo.date_of_birth" *ngIf="!employee" placeholder="Date of Birth">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Date of joining</label>
-    <input type="date" class="form-control"  [(ngModel)]="employee.date_of_joining" name="employee.date_of_joining" *ngIf="employee"  placeholder="Blood group">
-    <input type="date" class="form-control"   [(ngModel)]="newEmployeeInfo.date_of_joining" name="newEmployeeInfo.date_of_joining" *ngIf="!employee" placeholder="Blood group">
+    <label for="date of joining">Date of joining</label>
+    <input type="date" class="form-control"  [(ngModel)]="employee.date_of_joining" name="employee.date_of_joining" *ngIf="employee"  placeholder="Date of Joining">
+    <input type="date" class="form-control"   [(ngModel)]="newEmployeeInfo.date_of_joining" name="newEmployeeInfo.date_of_joining" *ngIf="!employee" placeholder="Date of Joining">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Gender</label>
+    <label for="Gender">Gender</label>
     <select class="form-control" [(ngModel)]="newEmployeeInfo.gender" name="newEmployeeInfo.gender" *ngIf="!employee">
       <option *ngFor="let g of genderChoices" value={{g.value}}> {{g.name}} </option>
     </select>
@@ -66,27 +64,27 @@
      <input type="text" class="form-control"  [(ngModel)]="employee.spouse_name" name="employee.spouse_name" *ngIf="employee"  >
      <input type="text" class="form-control"   [(ngModel)]="newEmployeeInfo.spouse_name" name="newEmployeeInfo.spouse_name" *ngIf="!employee" > 
   </div>
-<div class="form-group">
- <label for="">Designation</label>
- <select [(ngModel)]="employee.designation.id" name="employee.designation"  *ngIf="employee" class="form-control">
-  <option *ngFor="let d of designations" value={{d.id}}>{{d.name}}</option>
- </select>
- <select [(ngModel)]="newEmployeeInfo.designation" name="newEmployeeInfo.designation"  *ngIf="!employee" class="form-control">
-  <option *ngFor="let d of designations" value={{d.id}}>{{d.name}}</option>
- </select>
-</div>
-<div class="form-group">
- <label for="">Package</label>
- <select [(ngModel)]="employee.peckage.id" name="employee.peckage"  *ngIf="employee" class="form-control">
-  <option *ngFor="let d of packages" value={{d.id}}>{{d.name}}</option>
- </select>
- <select [(ngModel)]="newEmployeeInfo.peckage" name="newEmployeeInfo.peckage"  *ngIf="!employee" class="form-control">
-  <option *ngFor="let d of packages" value={{d.id}}>{{d.name}}</option>
- </select>
-</div>
+  <div class="form-group">
+  <label for="designation">Designation</label>
+  <select [(ngModel)]="employee.designation.id" name="employee.designation"  *ngIf="employee" class="form-control">
+    <option *ngFor="let d of designations" value={{d.id}}>{{d.name}}</option>
+  </select>
+  <select [(ngModel)]="newEmployeeInfo.designation" name="newEmployeeInfo.designation"  *ngIf="!employee" class="form-control">
+    <option *ngFor="let d of designations" value={{d.id}}>{{d.name}}</option>
+  </select>
+  </div>
+  <div class="form-group">
+  <label for="Package">Package</label>
+  <select [(ngModel)]="employee.peckage.id" name="employee.peckage"  *ngIf="employee" class="form-control">
+    <option *ngFor="let d of packages" value={{d.id}}>{{d.name}}</option>
+  </select>
+  <select [(ngModel)]="newEmployeeInfo.peckage" name="newEmployeeInfo.peckage"  *ngIf="!employee" class="form-control">
+    <option *ngFor="let d of packages" value={{d.id}}>{{d.name}}</option>
+  </select>
+  </div>
 
-  <button  class="btn btn-primary" (click)="submit()">Submit</button>
-   <button  class="btn btn-primary" style="margin-left:20px;" (click)="cancel()">Cancel</button>
+  <button  class="btn btn-success" (click)="submit()">Submit</button>
+  <button  class="btn btn-danger" style="margin-left:20px;" (click)="cancel()">Cancel</button>
 
 </div>     
   </div>

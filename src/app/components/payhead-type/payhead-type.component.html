@@ -1,5 +1,5 @@
 
- <button class="btn btn-default" (click)="addNew()">Add new payheadType</button>
+ <button class="btn btn-primary" (click)="addNew()">Add New Pay Head Type</button>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -8,14 +8,10 @@
       </tr>
     </thead>
     <tbody>
-      
-      
       <tr *ngFor="let payheadType of payheadTypes; index as i" (click)="seeDetailView(payheadType)">
         <th scope="row">{{i+1}}</th>
         <td>{{payheadType.name}}</td>
-        
       </tr>
-      
     </tbody>
   </table>
 

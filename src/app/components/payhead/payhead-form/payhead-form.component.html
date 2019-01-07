@@ -1,23 +1,21 @@
-
-
 <div class="modal-wrapper">
   <div class="modal-contain">
      <div class="container">
     
   <div class="form-group">
-    <label for="exampleInputEmail1">Payhead name</label>
+    <label for="exampleInputEmail1">Payhead Name</label>
     
-    <input type="text" class="form-control"  [(ngModel)]="payhead.name" name="payhead.name" *ngIf="payhead"  placeholder="name">
-    <input type="text" class="form-control"  [(ngModel)]="newpayheadInfo.name" name="newpayheadInfo.name" *ngIf="!payhead" placeholder="name">
+    <input type="text" class="form-control"  [(ngModel)]="payhead.name" name="payhead.name" *ngIf="payhead"  placeholder="Payhead Name">
+    <input type="text" class="form-control"  [(ngModel)]="newpayheadInfo.name" name="newpayheadInfo.name" *ngIf="!payhead" placeholder="Payhead Name">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Description</label>
     
-    <input type="text" class="form-control"  [(ngModel)]="payhead.description" name="payhead.description" *ngIf="payhead"  placeholder="Address">
-    <input type="text" class="form-control"   [(ngModel)]="newpayheadInfo.description" name="newpayheadInfo.description" *ngIf="!payhead" placeholder="Address">
+    <input type="text" class="form-control"  [(ngModel)]="payhead.description" name="payhead.description" *ngIf="payhead"  placeholder="Description">
+    <input type="text" class="form-control"   [(ngModel)]="newpayheadInfo.description" name="newpayheadInfo.description" *ngIf="!payhead" placeholder="Description">
   </div>
    <div class="form-group">
-    <label for="exampleInputEmail1">Add to net salary</label>
+    <label for="exampleInputEmail1">Add to Net Salary</label>
     <select  class="form-control" [(ngModel)]="payhead.add_net_salary"  name="payhead.add_net_salary" *ngIf="payhead" >
        <option value="true">
          Yes
@@ -37,26 +35,28 @@
   </div>
 
   <div class="form-group" >
-     <label for="">Calculation type</label>
-     <select [(ngModel)]="newpayheadInfo.calculation_type" name="newpayheadInfo.calculation_type" class="form-control" *ngIf="!payhead" >
-       <option value={{c.value}} *ngFor="let c of calculationType">
-         {{c.name}}
-      </option>
-     </select>
+    <label for="calculation type">Calculation Type</label>
+    <select [(ngModel)]="newpayheadInfo.calculation_type" name="newpayheadInfo.calculation_type" class="form-control" *ngIf="!payhead" >
+      <option value={{c.value}} *ngFor="let c of calculationType">
+        {{c.name}}
+    </option>
+    </select>
       
-      <select [(ngModel)]="payhead.calculation_type"  name="payhead.calculation_type" class="form-control" *ngIf="payhead" >
-       <option value={{c.value}} *ngFor="let c of calculationType">
-         {{c.name}}
-      </option>
-     </select>
+    <select [(ngModel)]="payhead.calculation_type"  name="payhead.calculation_type" class="form-control" *ngIf="payhead" >
+      <option value={{c.value}} *ngFor="let c of calculationType">
+        {{c.name}}
+    </option>
+    </select>
    </div>
-   <div class="form-group" *ngIf="!payhead && newpayheadInfo.calculation_type == 'Flat Rate' ">
+  <div class="form-group" *ngIf="!payhead && newpayheadInfo.calculation_type == 'Flat Rate' ">
     <label for="exampleInputEmail1">Rate</label>
+
     <input type="text" class="form-control"  [(ngModel)]="newpayheadInfo.rate" name="newpayheadInfo.rate" *ngIf="!payhead" placeholder="rate">
   </div>
   <div class="form-group" *ngIf="payhead && newpayheadInfo.calculation_type == 'Flat Rate' ">
     <label for="exampleInputEmail1">Rate</label>
     <input type="text" class="form-control"  [(ngModel)]="payhead.rate" name="payhead.rate" *ngIf="payhead"  placeholder="rate">
+    <input type="text" class="form-control"  [(ngModel)]="newpayheadInfo.rate" name="newpayheadInfo.rate" *ngIf="!payhead" placeholder="Rate">
   </div>
   <div class="form-group" *ngIf="!payhead && newpayheadInfo.calculation_type == 'As Computed Value' ">
     <label for="exampleInputEmail1">Rule</label>
@@ -67,16 +67,16 @@
     <input type="text" class="form-control"  [(ngModel)]="payhead.rule" name="payhead.rule" *ngIf="payhead"  placeholder="Rule">
   </div>
   <div class="form-group" >
-     <label for="">Calculation period</label>
-     <select [(ngModel)]="newpayheadInfo.calculation_period"  name="newpayheadInfo.calculation_period" class="form-control" *ngIf="!payhead" >
-       <option value={{c.id}} *ngFor="let c of units">
-         {{c.name}}
-      </option>
-     </select>
-      
-      <select [(ngModel)]="payhead.calculation_period" name="payhead.calculation_period" class="form-control" *ngIf="payhead" >
-       <option value={{c.id}} *ngFor="let c of units">
-         {{c.name}}
+    <label for="">Calculation Period</label>
+    <select [(ngModel)]="newpayheadInfo.calculation_period"  name="newpayheadInfo.calculation_period" class="form-control" *ngIf="!payhead" >
+      <option value={{c.id}} *ngFor="let c of units">
+        {{c.name}}
+    </option>
+    </select>
+    
+    <select [(ngModel)]="payhead.calculation_period" name="payhead.calculation_period" class="form-control" *ngIf="payhead" >
+      <option value={{c.id}} *ngFor="let c of units">
+        {{c.name}}
       </option>
      </select>
    </div> 
@@ -126,12 +126,11 @@
      </select>
    </div>
 
-   
-  
 
   
-  <button  class="btn btn-primary" (click)="submit()">Submit</button>
-   <button  class="btn btn-primary" style="margin-left:20px;" (click)="cancel()">Cancel</button>
+
+  <button  class="btn btn-success" (click)="submit()">Submit</button>
+  <button  class="btn btn-danger" style="margin-left:20px;" (click)="cancel()">Cancel</button>
 
 </div>     
   </div>

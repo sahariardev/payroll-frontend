@@ -1,13 +1,13 @@
 
 <div class="" *ngIf="package">
-    {{package.name}}
-    {{package.salary}}
-    {{package.annual_leave}}
-    {{package.sick_leave}}
-    {{package.extra}}
-    {{package.description}}
+    <div>{{package.name}}</div>
+    <div>{{package.salary}}</div>
+    <div>{{package.annual_leave}}</div>
+    <div>{{package.sick_leave}}</div>
+    <div>{{package.extra}}</div>
+    <div>{{package.description}}</div>
 </div>
-<button class="btn btn-default" (click)="edit()">Edit </button>
+<button class="btn btn-edit" (click)="edit()">Edit </button>
 <div [@popOverState]="stateName">  
     <app-package-form (messageEvent)="receiveMessage($event)" [package]="package"></app-package-form>
 </div>

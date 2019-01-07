@@ -1,4 +1,4 @@
-<button class="btn btn-default" (click)="addNewsalarydetail()">Add new employee</button>
+<button class="btn btn-primary" (click)="addNewsalarydetail()">Add New Employee</button>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -9,15 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    
-    
     <tr *ngFor="let salary of salarydetails; index as i" (click)="seeDetailView(salary)">
       <th scope="row">{{i+1}}</th>
       <td>{{salary.employee}}</td>
       <td>{{salary.effective_from}}</td>
       <td>{{salary.effective_till_date}}</td>
     </tr>
-    
   </tbody>
 </table>
 <div [@popOverState]="stateName">

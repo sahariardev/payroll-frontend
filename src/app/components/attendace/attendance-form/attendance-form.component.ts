@@ -11,35 +11,37 @@ import {getHost} from '../../config';
 })
 export class AttendanceFormComponent implements OnInit {
 
-  @Input() attendance:any;  
+  @Input() attendance:any;
+  endpoint=getHost();  
   @Output() messageEvent=new EventEmitter<boolean>();
    newattendanceInfo={
-    employee:'',
-    production_attendance_type:'',
-    value:'',
-    unit:'',
-    date:''    
+    "employee":'',
+    "production_attendance_type":'',
+    "value":'',
+    "unit":'',
+    "date":''    
   }
-  endpoint:string;
   employees: any;
   units:any;
   productionattendancetypes: any;
 
-  constructor(private http:HttpClient) {
-    this.endpoint=getHost();
-   }
+  constructor(private http:HttpClient) {}
   
   ngOnInit() {
-    let url=this.endpoint+"/api/employees/"
-    let unit = this.endpoint+"/api/units/"
-    let productionattendancetype = this.endpoint+"/api/productionattendancetypes/"
-    this.http.get(url).subscribe((response)=>{
+    this.loadFormData();
+  }
+
+  loadFormData(){
+    let employeeUrl=this.endpoint+"/api/employees/"
+    let unitUrl = this.endpoint+"/api/units/"
+    let productionattendancetypeUrl = this.endpoint+"/api/productionattendancetypes/"
+    this.http.get(employeeUrl).subscribe((response)=>{
       this.employees = response;
     })
-    this.http.get(unit).subscribe((response)=>{
+    this.http.get(unitUrl).subscribe((response)=>{
       this.units = response;
     })
-    this.http.get(productionattendancetype).subscribe((response)=>{
+    this.http.get(productionattendancetypeUrl).subscribe((response)=>{
       this.productionattendancetypes = response;
     })
   }
@@ -49,35 +51,20 @@ export class AttendanceFormComponent implements OnInit {
     
     if(isUndefined(this.attendance))
     {
-      //create a post request
-      let postRequestUrl=this.endpoint+"/api/attendances/create/";
-      console.log(this.newattendanceInfo);
-
-      this.http.post(postRequestUrl,this.newattendanceInfo).subscribe((response)=>{
-        console.log(response);  
-        this.sendMessageToParent(true);  
-      });
+      let url = this.endpoint+"/api/attendances/create/"
+      console.log(this.newattendanceInfo); 
+      this.http.post(url,this.newattendanceInfo).subscribe((response)=>{
+        this.sendMessageToParent(true);
+     })
     }
     else
     {
       //put request for editing
       console.log("---staring---");
        let puttRequestUrl=this.endpoint+"/api/attendances/"+this.attendance.id+"/edit/";
-       console.log(this.attendance);
-       console.log("---Ending---");
-       let data={
-         id:this.attendance.id,
-         production_attendance_type:this.attendance.production_attendance_type,
-         value:this.attendance.value,
-         unit:this.attendance.unit,
-         date:this.attendance.date
-       }
-
-       this.http.put(puttRequestUrl,data).subscribe((response)=>{
-            this.sendMessageToParent(true);
-
-       });
-
+       this.http.put(puttRequestUrl,this.attendance).subscribe((response)=>{
+        this.sendMessageToParent(true);
+    });
     }
   }
 
