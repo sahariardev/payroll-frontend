@@ -39,3 +39,15 @@ body{
 .btn-edit:hover{
     background: #169F85 !important;
 }
+
+.title-center{
+    text-align: center;
+}
+
+.right-float{
+    float: right;
+}
+
+.searchbar{
+    margin-top: 10.3px;
+}
