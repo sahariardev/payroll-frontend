@@ -1,10 +1,10 @@
 <div class="modal-wrapper">
   <div class="modal-contain">
      <div class="container">
-     
+   
      <div class="form-group" *ngIf="!salarydetail">
-      <label for="exampleInputEmail1">Salary detail name</label>
-      <input type="text" class="form-control"  [(ngModel)]="newsalarydetailInfo.name" name="newsalarydetailInfo.name"  placeholder="effective date">
+      <label for="exampleInputEmail1">Salary Detail name</label>
+      <input type="text" class="form-control"  [(ngModel)]="newsalarydetailInfo.name" name="newsalarydetailInfo.name"  placeholder="Salary Detail Name">
     </div>
      <div class="form-group" *ngIf="!salarydetail">
        <label for="exampleInputEmail1">Employee</label>
@@ -12,22 +12,22 @@
        <option *ngFor="let g of employees" value={{g.id}}> {{g.name}} </option>
        </select>
      </div>
-   
+
     <div class="form-group">
       <label for="exampleInputEmail1">Effective From</label>
       
-      <input type="date" class="form-control"  [(ngModel)]="salarydetail.effective_from" name="salarydetail.effective_from" *ngIf="salarydetail"  placeholder="Effecive date">
-      <input type="date" class="form-control"  [(ngModel)]="newsalarydetailInfo.effective_from" name="newsalarydetailInfo.effective_from" *ngIf="!salarydetail" placeholder="effective date">
+      <input type="date" class="form-control"  [(ngModel)]="salarydetail.effective_from" name="salarydetail.effective_from" *ngIf="salarydetail"  placeholder="Effecive Date">
+      <input type="date" class="form-control"  [(ngModel)]="newsalarydetailInfo.effective_from" name="newsalarydetailInfo.effective_from" *ngIf="!salarydetail" placeholder="effective Date">
     </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">Effective From</label>
-      
-      <input type="date" class="form-control"  [(ngModel)]="salarydetail.effective_till_date" name="salarydetail.effective_till_date" *ngIf="salarydetail"  placeholder="Effecive till date">
-      <input type="date" class="form-control"  [(ngModel)]="newsalarydetailInfo.effective_till_date" name="newsalarydetailInfo.effective_till_date" *ngIf="!salarydetail" placeholder="effective till date">
+      <label for="exampleInputEmail1">Effective Till</label>
+     
+      <input type="date" class="form-control"  [(ngModel)]="salarydetail.effective_till_date" name="salarydetail.effective_till_date" *ngIf="salarydetail"  placeholder="Effecive Till Date">
+      <input type="date" class="form-control"  [(ngModel)]="newsalarydetailInfo.effective_till_date" name="newsalarydetailInfo.effective_till_date" *ngIf="!salarydetail" placeholder="Effective Till Date">
     </div>
 
-    <button  class="btn btn-primary" (click)="submit()">Submit</button>
-    <button  class="btn btn-primary" style="margin-left:20px;" (click)="cancel()">Cancel</button>
+    <button  class="btn btn-success" (click)="submit()">Submit</button>
+    <button  class="btn btn-danger" style="margin-left:20px;" (click)="cancel()">Cancel</button>
 
     </div>     
   </div>

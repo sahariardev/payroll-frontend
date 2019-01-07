@@ -1,16 +1,16 @@
 
 <div class="" *ngIf="payhead">
-    {{payhead.name}}
-    {{payhead.description}}
-    {{payhead.add_net_salary}}
-    {{payhead.calculation_type}}
-    {{payhead.calculation_period}}
-    {{payhead.pay_head_type}}
-    {{payhead.attendence_production_type}}
-    {{payhead.add_or_deduct}}
-    {{payhead.under}}
+    <div>{{payhead.name}}</div>
+    <div>{{payhead.description}}</div>
+    <div>{{payhead.add_net_salary}}</div>
+    <div>{{payhead.calculation_type}}</div>
+    <div>{{payhead.calculation_period}}</div>
+    <div>{{payhead.pay_head_type}}</div>
+    <div>{{payhead.attendence_production_type}}</div>
+    <div>{{payhead.add_or_deduct}}</div>
+    <div>{{payhead.under}}</div>
 </div>
-<button class="btn btn-default" (click)="edit()">Edit </button>
+<button class="btn btn-edit" (click)="edit()">Edit </button>
 <div [@popOverState]="stateName">  
 <app-payhead-form (messageEvent)="receiveMessage($event)" [payhead]="payhead"></app-payhead-form>
 </div>

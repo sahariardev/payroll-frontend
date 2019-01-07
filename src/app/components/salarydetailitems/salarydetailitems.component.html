@@ -1,23 +1,18 @@
-<button class="btn btn-default" (click)="addNewsalarydetailitem()">Add new Salary Detail Item</button>
+<button class="btn btn-primary" (click)="addNewsalarydetailitem()">Add New Salary Detail Item</button>
 <table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">salary detail</th>
       <th scope="col">Pay Head</th>
-
     </tr>
   </thead>
   <tbody>
-    
-    
     <tr *ngFor="let salarydetailitem of salarydetailitems; index as i" (click)="seeDetailView(salarydetailitem)">
       <th scope="row">{{i+1}}</th>
       <td>{{salarydetailitem.salary_detail}}</td>
       <td>{{salarydetailitem.pay_head}}</td>
-
     </tr>
-    
   </tbody>
 </table>
 <div [@popOverState]="stateName">
