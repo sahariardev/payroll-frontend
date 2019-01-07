@@ -1,5 +1,5 @@
 
- <button class="btn btn-default" (click)="addNew()">Add new production attendace type</button>
+ <button class="btn btn-primary" (click)="addNew()">Add New Production Attendace Type</button>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -8,15 +8,12 @@
         <th scope="col">Type</th>
       </tr>
     </thead>
-    <tbody>
-
-            
+    <tbody>    
       <tr *ngFor="let productionAttendaceType of productionAttendanceTypes; index as i" (click)="seeDetailView(productionAttendaceType)">
         <th scope="row">{{i+1}}</th>
         <td>{{productionAttendaceType.name}}</td>
         <td>{{productionAttendaceType.type}}</td>
       </tr>
-      
     </tbody>
   </table>
 

@@ -2,40 +2,50 @@
     <div class="modal-contain">
         <div class="container">
           <div class="form-group" *ngIf="!attendance">
-            <label for="exampleInputEmail1">Employee</label>
-            <select class="form-control" [(ngModel)]="newattendanceInfo.employee" name="newattendanceInfo.employee" *ngIf="!attendance">
-            <option *ngFor="let g of employees" value={{g.id}}> {{g.name}} </option>
+            <label for="employee">Employee</label>
+            <!-- For Create -->
+            <select [(ngModel)]="newattendanceInfo.employee" name="newattendanceInfo.employee" class="form-control">
+              <option value={{c.id}} *ngFor="let c of employees">
+                {{c.name}}
+             </option>
             </select>
           </div>
-          <div class="form-group" *ngIf="!attendance">
-              <label for="exampleInputEmail1">Production Attendance Type</label>
+          <div class="form-group">
+              <label for="production attendance type">Production Attendance Type</label>
+              <!-- Create -->
               <select class="form-control" [(ngModel)]="newattendanceInfo.production_attendance_type" name="newattendanceInfo.production_attendance_type" *ngIf="!attendance">
               <option *ngFor="let g of productionattendancetypes" value={{g.id}}> {{g.name}} </option>
               </select>
+              <!-- Edit -->
+              <select [(ngModel)]="attendance.production_attendance_type" name="attendance.production_attendance_type" class="form-control" *ngIf="attendance" >
+                <option value={{g.id}} *ngFor="let g of productionattendancetypes">
+                  {{g.name}}
+               </option>
+              </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Value</label>
+            <label for="value">Value</label>
               
-            <input type="number" class="form-control"  [(ngModel)]="attendance.value" name="attendance.value" *ngIf="attendance"  placeholder="">
-            <input type="number" class="form-control"  [(ngModel)]="newattendanceInfo.value" name="newattendanceInfo.value" *ngIf="!attendance" placeholder="">
+            <input type="number" class="form-control"  [(ngModel)]="attendance.value" name="attendance.value" *ngIf="attendance"  placeholder="Value">
+            <input type="number" class="form-control"  [(ngModel)]="newattendanceInfo.value" name="newattendanceInfo.value" *ngIf="!attendance" placeholder="Value">
           </div>
           <div class="form-group">
-              <label for="exampleInputEmail1">Unit</label>
+              <label for="unit">Unit</label>
               <select class="form-control" [(ngModel)]="newattendanceInfo.unit" name="newattendanceInfo.unit" *ngIf="!attendance">
-                <option *ngFor="let g of units" [ngValue]="g"> {{g.name}} </option>
+                <option *ngFor="let g of units" value={{g.id}}> {{g.name}} </option>
               </select>
               <select class="form-control" [(ngModel)]="attendance.unit" name="attendance.unit" *ngIf="attendance">
-                <option *ngFor="let g of units" value={{g}}> {{g.name}} </option>
+                <option *ngFor="let g of units" value={{g.id}}> {{g.name}} </option>
               </select>
           </div> 
           <div class="form-group">
-            <label for="exampleInputEmail1">Date</label>
+            <label for="date">Date</label>
             
             <input type="date" class="form-control"  [(ngModel)]="attendance.date" name="attendance.date" *ngIf="attendance"  placeholder="date">
             <input type="date" class="form-control"  [(ngModel)]="newattendanceInfo.date" name="newattendanceInfo.date" *ngIf="!attendance" placeholder="date">
           </div>
         </div>
-      <button  class="btn btn-primary" (click)="submit()">Submit</button>
-      <button  class="btn btn-primary" style="margin-left:20px;" (click)="cancel()">Cancel</button>     
+      <button  class="btn btn-success" (click)="submit()">Submit</button>
+      <button  class="btn btn-danger" style="margin-left:20px;" (click)="cancel()">Cancel</button>     
     </div>
   </div>
