@@ -52,11 +52,11 @@
    </div>
    <div class="form-group" *ngIf="!payhead && newpayheadInfo.calculation_type == 'Flat Rate' ">
     <label for="exampleInputEmail1">Rate</label>
-    <input type="text" class="form-control"  [(ngModel)]="newpayheadInfo.rate" name="newpayheadInfo.rate" *ngIf="!payhead" placeholder="name">
+    <input type="text" class="form-control"  [(ngModel)]="newpayheadInfo.rate" name="newpayheadInfo.rate" *ngIf="!payhead" placeholder="rate">
   </div>
   <div class="form-group" *ngIf="payhead && newpayheadInfo.calculation_type == 'Flat Rate' ">
     <label for="exampleInputEmail1">Rate</label>
-    <input type="text" class="form-control"  [(ngModel)]="payhead.rate" name="payhead.rate" *ngIf="payhead"  placeholder="name">
+    <input type="text" class="form-control"  [(ngModel)]="payhead.rate" name="payhead.rate" *ngIf="payhead"  placeholder="rate">
   </div>
   <div class="form-group" *ngIf="!payhead && newpayheadInfo.calculation_type == 'As Computed Value' ">
     <label for="exampleInputEmail1">Rule</label>
@@ -80,8 +80,8 @@
       </option>
      </select>
    </div> 
-
-   <div class="form-group" >
+   <div *ngIf="!payhead && newpayheadInfo.calculation_type != 'Flat Rate' && newpayheadInfo.calculation_type != 'As Computed Value'">
+   <div class="form-group"  >
      <label for="">Attendence production type:</label>
      <select [(ngModel)]="newpayheadInfo.attendence_production_type" name="newpayheadInfo.attendence_production_type" class="form-control" *ngIf="!payhead" >
        <option value={{c.id}} *ngFor="let c of attendanceprodutiontype">
@@ -95,7 +95,7 @@
       </option>
      </select>
    </div> 
-   
+   </div>
    <div class="form-group" >
      <label for="">Add or deduct:</label>
      <select [(ngModel)]="newpayheadInfo.add_or_deduct" name="newpayheadInfo.add_or_deduct" class="form-control" *ngIf="!payhead" >
