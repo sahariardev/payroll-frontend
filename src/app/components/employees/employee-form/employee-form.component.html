@@ -1,8 +1,9 @@
 <div class="modal-wrapper">
   <div class="modal-contain">
      <div class="container">
-    
+    <h3 class = "title-center title-margin"> Employee Form</h3>
   <div class="form-group">
+
     <label for="name">Employee name</label>
     
     <input type="text" class="form-control"  [(ngModel)]="employee.name" name="employee.name" *ngIf="employee"  placeholder="Name">
@@ -82,9 +83,15 @@
     <option *ngFor="let d of packages" value={{d.id}}>{{d.name}}</option>
   </select>
   </div>
+<div class = "row">
+  <div class = "col-md-4"></div> 
+  <div class = "col-md-6">
+      <button  class="btn btn-success" (click)="submit()">Submit</button>
+      <button  class="btn btn-danger" style="margin-left:20px;" (click)="cancel()">Cancel</button>
+  </div>
+  <div class = "col-md-2"></div>
+  </div>
 
-  <button  class="btn btn-success" (click)="submit()">Submit</button>
-  <button  class="btn btn-danger" style="margin-left:20px;" (click)="cancel()">Cancel</button>
 
 </div>     
   </div>
