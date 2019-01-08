@@ -1,5 +1,20 @@
-
- <button class="btn btn-primary" (click)="addNew()">Add New Unit</button>
+<div class="row">
+  <div class = "col-md-4"> 
+    <div class="input-group">
+      <input type="text" class="form-control searchbar" placeholder="Search for Employee">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">Go!</button>
+      </span>
+    </div>
+  </div>
+  <div class = "col-md-5"></div>
+  <div class="col-md-3">
+    <button class="btn btn-primary right-float" (click)="addNew()">Add New Unit</button>
+  </div>
+</div>
+  <div class="title-center title-margin">
+    <h3>Unit List</h3>
+  </div>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -9,14 +24,11 @@
       </tr>
     </thead>
     <tbody>
-      
-      
       <tr *ngFor="let unit of units; index as i" (click)="seeDetailView(unit)">
         <th scope="row">{{i+1}}</th>
         <td>{{unit.name}}</td>
         <td>{{unit.symbol}}</td>
       </tr>
-      
     </tbody>
   </table>
 
