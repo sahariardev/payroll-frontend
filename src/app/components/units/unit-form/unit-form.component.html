@@ -9,17 +9,18 @@
     <input type="text" class="form-control"  [(ngModel)]="newUnitInfo.name" name="newUnitnfo.name" *ngIf="!unit" placeholder="name">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Unit symbol</label>
-    <input type="text" class="form-control"  [(ngModel)]="unit.symbol" name="unit.symbol" *ngIf="unit"  placeholder="Symbole">
-    <input type="text" class="form-control"   [(ngModel)]="newUnitInfo.symbol" name="newUnitInfo.symbol" *ngIf="!unit" placeholder="Address">
+    <label for="exampleInputEmail1">Unit Symbol</label>
+    <input type="text" class="form-control"  [(ngModel)]="unit.symbol" name="unit.symbol" *ngIf="unit"  placeholder="Unit Symbol">
+    <input type="text" class="form-control"   [(ngModel)]="newUnitInfo.symbol" name="newUnitInfo.symbol" *ngIf="!unit" placeholder="Unit Symbol">
   </div>
    <div class="form-group">
     <label for="exampleInputEmail1">Description</label>
     <input type="text" class="form-control"  [(ngModel)]="unit.description" name="unit.description" *ngIf="unit"  placeholder="Description">
     <input type="text" class="form-control"  [(ngModel)]="newUnitInfo.description" name="newUnitInfo.description" *ngIf="!unit" placeholder="Description">
   </div>
-  <button  class="btn btn-primary" (click)="submit()">Submit</button>
-
+  <button  class="btn btn-success" (click)="submit()">Submit</button>
+  <button  class="btn btn-danger" style="margin-left:20px;" (click)="cancel()">Cancel</button> 
+  
 </div>     
   </div>
 </div>

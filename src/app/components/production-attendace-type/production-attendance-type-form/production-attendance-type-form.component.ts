@@ -36,21 +36,14 @@ export class ProductionAttendanceTypeFormComponent implements OnInit {
 
   constructor(public http:HttpClient) { }
 
-
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
  submit()
   {
-    
     if(isUndefined(this.productionAttendanceTypes))
     {
-      let data=new FormData();
-      data.append("name",this.newProductionAttendanceTypeInfo.name);
-      data.append("type",this.newProductionAttendanceTypeInfo.type);
       let url=this.endpoint+"/api/productionattendancetypes/create/"
-      this.http.post(url,data).subscribe((response)=>{
+      this.http.post(url,this.newProductionAttendanceTypeInfo).subscribe((response)=>{
          console.log(response); 
          this.sendMessageToParent(true);
       })
@@ -58,22 +51,21 @@ export class ProductionAttendanceTypeFormComponent implements OnInit {
     else
     {
       //create a put request  
-      let formData=new FormData();
-      formData.append("id",this.productionAttendanceTypes.id);
-      formData.append("name",this.productionAttendanceTypes.name);
-      formData.append("type",this.productionAttendanceTypes.type);
       console.log(this.productionAttendanceTypes);
       let endpointUrlForUpdatingproductionAttendaceType=this.endpoint+"/api/productionattendancetypes/"+this.productionAttendanceTypes.id+"/edit/";
-      this.http.put(endpointUrlForUpdatingproductionAttendaceType,formData).subscribe((response)=>{
+      this.http.put(endpointUrlForUpdatingproductionAttendaceType,this.productionAttendanceTypes).subscribe((response)=>{
           this.sendMessageToParent(true);
       });
-
     }
   }
 
   sendMessageToParent(message:boolean)
   {
     this.messageEvent.emit(message);
+  }
+  cancel()
+  {
+    this.sendMessageToParent(true); 
   }
 
 }

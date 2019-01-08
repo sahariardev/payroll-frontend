@@ -118,5 +118,9 @@ export class PayheadFormComponent implements OnInit {
   sendMessageToParent(message:boolean)  {
     this.messageEvent.emit(message);
   }
+  cancel()
+  {
+    this.sendMessageToParent(true); 
+  }
 
 }

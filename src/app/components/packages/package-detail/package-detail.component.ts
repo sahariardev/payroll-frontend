@@ -30,7 +30,7 @@ export class PackageDetailComponent implements OnInit {
    
   id:number;
   endpoint:string;
-  package:any;
+  package_item:any;
   show:boolean;
 
  constructor(
@@ -52,7 +52,7 @@ export class PackageDetailComponent implements OnInit {
     let url=this.endpoint+""+this.id;
     console.log("url is "+url);
     this.http.get(url).subscribe((response)=>{
-      this.package=response;
+      this.package_item=response;
     });
   }
   //receving message from child component
