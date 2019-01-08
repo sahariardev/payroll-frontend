@@ -1,10 +1,21 @@
-<div class="row">
-  <div>
-    <h3>Attendance List</h3>
+<div class = "row">
+  <div class = "col-md-4"> 
+    <div class="input-group">
+      <input type="text" class="form-control searchbar" placeholder="Search Attendance">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">Go!</button>
+      </span>
+    </div>
+  </div>
+  <div class = "col-md-5"></div>
+  <div class = "col-md-3"> 
+    <button class="btn btn-primary right-float" (click)="addNew()">Add New Attendance</button>
   </div>
 </div>
+<div class="title-center title-margin">
+  <h3>Attendance List</h3>
+</div>
 
-  <button class="btn btn-primary" (click)="addNew()">Add new Attendance</button>
   <table class="table table-bordered">
     <thead>
       <tr>

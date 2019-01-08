@@ -1,5 +1,21 @@
-
- <button class="btn btn-primary" (click)="addNew()">New Pay Head Type</button>
+<div class = "row">
+  <div class = "col-md-4"> 
+    <div class="input-group">
+      <input type="text" class="form-control searchbar" placeholder="Search Payhead Type">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">Go!</button>
+      </span>
+    </div>
+  </div>
+  <div class = "col-md-5"></div>
+  <div class = "col-md-3"> 
+    <button class="btn btn-primary right-float" (click)="addNew()">New Payhead Type</button>
+  </div>
+</div>
+<div class="title-center title-margin">
+  <h3>Payhead Type List</h3>
+</div>
+ 
   <table class="table table-bordered">
     <thead>
       <tr>

@@ -1,4 +1,21 @@
-<button class="btn btn-primary" (click)="addNewsalarydetailitem()">Add New Salary Detail Item</button>
+<div class = "row">
+  <div class = "col-md-4"> 
+    <div class="input-group">
+      <input type="text" class="form-control searchbar" placeholder="Search Salary Detail Item">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">Go!</button>
+      </span>
+    </div>
+  </div>
+  <div class = "col-md-5"></div>
+  <div class = "col-md-3"> 
+    <button class="btn btn-primary right-float" (click)="addNewsalarydetailitem()">Add Salary Detail Item</button>
+  </div>
+</div>
+<div class="title-center title-margin">
+  <h3>Salary Detail Item List</h3>
+</div>
+
 <table class="table table-bordered">
   <thead>
     <tr>
