@@ -1,4 +1,21 @@
-<button class="btn btn-primary" (click)="addNewEmployee()">Add new employee</button>
+<div class = "row">
+  <div class = "col-md-4"> 
+    <div class="input-group">
+      <input type="text" class="form-control searchbar" placeholder="Search for Employee">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button">Go!</button>
+      </span>
+    </div>
+  </div>
+<div class = "col-md-5"></div>
+  <div class = "col-md-3"> 
+    <button class="btn btn-primary right-float" (click)="addNewEmployee()">Add new employee</button>
+  </div>
+</div>
+<div class="title-center">
+    <h3>Employee List</h3>
+    </div>
+<!-- <button class="btn btn-primary" (click)="addNewEmployee()">Add new employee</button> -->
 <table class="table table-bordered">
   <thead>
     <tr>
