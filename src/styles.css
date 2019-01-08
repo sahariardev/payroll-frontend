@@ -13,7 +13,8 @@ body{
 {
     position: fixed;
     background-color: rgba(206, 206, 206, 0.53);
-    width:calc(100% - 300px);
+    /* width:calc(100% - 300px); */
+    width:calc(84.4%);
     height: 100%;
     top:0px;
     padding: 100px;
@@ -23,13 +24,15 @@ body{
 .modal-contain
 {
     margin: auto;
-    max-width: 500px;
+    max-width: 700px;
     background: white;
     padding: 30px;
 }
 .btn{
     margin-top: 10px;
     margin-bottom: 10px;
+    
+   
 }
 .btn-edit{
     background: #26B99A !important;
@@ -50,3 +53,8 @@ body{
 .searchbar{
     margin-top: 10.3px;
 }
+.title-margin{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
