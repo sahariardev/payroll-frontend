@@ -1,9 +1,9 @@
 
 <div class="" *ngIf="payheadType">
-    {{payheadType.name}}
-    {{payheadType.description}}
+    <div>{{payheadType.name}}</div>
+    <div>{{payheadType.description}}</div>
 </div>
-<button class="btn btn-default" (click)="edit()">Edit </button>
+<button class="btn btn-edit" (click)="edit()">Edit </button>
 <div [@popOverState]="stateName">  
 <app-payhead-type-form (messageEvent)="receiveMessage($event)" [payheadType]="payheadType"></app-payhead-type-form>
 </div>

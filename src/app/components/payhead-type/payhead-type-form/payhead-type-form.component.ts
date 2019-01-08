@@ -20,17 +20,12 @@ export class PayheadTypeFormComponent implements OnInit {
 
   constructor(public http:HttpClient) { }
 
-
-  ngOnInit() {
-    
-  }
+  ngOnInit() {  }
 
  submit()
   {
-    
     if(isUndefined(this.payheadType))
     {
-
       let url=this.endpoint+"/api/payheadtypes/create/"
       this.http.post(url,this.newpayheadTypeInfo).subscribe((response)=>{
          console.log(response); 
@@ -39,18 +34,18 @@ export class PayheadTypeFormComponent implements OnInit {
     }
     else
     {
- 
-     
       let endpointUrlForUpdatingpayheadType=this.endpoint+"/api/payheadtypes/"+this.payheadType.id+"/edit/";
       this.http.put(endpointUrlForUpdatingpayheadType,this.payheadType).subscribe((response)=>{
           this.sendMessageToParent(true);
       });
-
     }
   }
   sendMessageToParent(message:boolean)
   {
     this.messageEvent.emit(message);
   }
-
+  cancel()
+  {
+    this.sendMessageToParent(true); 
+  }
 }
